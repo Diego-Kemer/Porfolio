@@ -2,4 +2,62 @@
     width: 100%;
     height: 100vh;
     background: var(--prim);
+    align-items: center;
+    display: flex;
+}
+.contenido{
+    position: relative;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+.contenido .texto{
+    color: #fff;
+    font-size: 25px;
+    width: 40%;
+    animation: izquierda 2s;
+
+}
+@keyframes izquierda {
+    0%{transform: translateX(-100%); opacity: 0;}
+    80%{transform: translateX(10%); opacity: 1;}
+    100%{transform: translateX(0%); opacity: 1;}
+}
+.contenido .texto h1{
+    margin: 10px 0px;
+    font-size: 70px;
+}
+.contenido .texto button{
+    margin: 20px 0px;
+    padding: 20px 50px 20px 50px;
+    font-size: 30px;
+    color: #fff;
+    background: #000;
+    border-radius: 232px;
+    display: flex;
+    align-items: center;
+    border: solid .5px #fff;
+    box-shadow: 1px 1px 10px rgb(252, 145, 5, 0.2),
+                -1px -1px 10px rgba(252, 145, 5, 0.2);
+}
+.contenido .texto button i{
+    margin-left: 20px;
+    font-weight: lighter;
+}
+.contenido .imgEIcons{
+    animation: derecha 2s;
+    width: 30%;
+    text-align: center;
+}
+@keyframes derecha {
+    0%{transform: translateX(100%); opacity: 0;}
+    80%{transform: translateX(-10%); opacity: 1;}
+    100%{transform: translateX(0%); opacity: 1;}
+}
+.contenido img{
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 50%;
 }

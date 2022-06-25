@@ -27,11 +27,11 @@
     outline: none;
 }
 .contenido .botones button.contacto{
-    padding: 10px 15px;
+    padding: 5px 15px;
     margin: 0px 20px;
     color: #000;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 2px;
     text-transform: uppercase;
     font-weight: bold;
 }
