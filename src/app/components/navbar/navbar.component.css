@@ -44,9 +44,10 @@ hr{
     width: 80%;
     margin: auto;
     display: block;
-    animation: agranda 1s;
+    animation: agranda 2s;
 }
 @keyframes agranda {
     0%{width: 0%;}
+    80%{width: 85%;}
     100%{width: 80%;}
 }
