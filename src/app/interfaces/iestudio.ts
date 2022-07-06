@@ -1,9 +1,7 @@
 
 export interface IEstudio {
+    id: number,
     titulo: string,
     frcha_inicio: string,
-    fecha_fin: string,
-    id_usuario: number,
-    id_modalidad: number,
-    id_institucion: number
+    fecha_fin: string
 }

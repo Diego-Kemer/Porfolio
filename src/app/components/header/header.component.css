@@ -61,3 +61,39 @@
     object-fit: contain;
     border-radius: 50%;
 }
+.contenedor .redes{
+    position: absolute;
+    color: #fff;
+    left: 0px;
+    bottom: 0px;
+}
+.contenedor .redes .red{
+    position: relative;
+    height: 100%;
+}
+.contenedor .redes .red hr{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    height: 50vh;
+    width: 1px;
+    z-index: 1;
+}
+.contenedor .redes .red .enlaces{
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    
+}
+.contenedor .redes .red a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 20px;
+    display: block;
+    background-color: var(--prim);
+}
