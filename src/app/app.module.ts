@@ -10,6 +10,12 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { WorkExperienceComponent } from './components/work-experience/work-experience.component';
 import { ExperiencesComponent } from './components/experiences/experiences.component';
+import { EducationComponent } from './components/education/education.component';
+import { ItemEducationComponent } from './components/item-education/item-education.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ItemSkillComponent } from './components/item-skill/item-skill.component';
+import { WorksComponent } from './components/works/works.component';
+import { ItemWorkComponent } from './components/item-work/item-work.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,13 @@ import { ExperiencesComponent } from './components/experiences/experiences.compo
     HomeComponent,
     AboutComponent,
     WorkExperienceComponent,
-    ExperiencesComponent
+    ExperiencesComponent,
+    EducationComponent,
+    ItemEducationComponent,
+    SkillsComponent,
+    ItemSkillComponent,
+    WorksComponent,
+    ItemWorkComponent
   ],
   imports: [
     BrowserModule,

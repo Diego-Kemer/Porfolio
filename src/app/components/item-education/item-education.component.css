@@ -1,0 +1,27 @@
+.container{
+    color: #fff;
+    margin: 50px 0px;
+    font-size: 20px;
+    border-right: solid 1px #fff;
+    padding-left: 50px;
+    margin-right: 50px;
+    position: relative;
+    font-size: 20px;
+}
+.container .lista{
+    margin: 20px;
+}
+.container i{
+    position: absolute;
+    right: -11px;
+    top: 40%;
+    background: var(--prim);
+    padding: 10px 0px;
+}
+.container img{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -10px;
+    left: -30px;
+}

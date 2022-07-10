@@ -1,0 +1,111 @@
+.container{
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+}
+.skill{
+    width: 220px;
+    height: 220px;
+    position: relative;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.548),
+                -2px -2px 8px rgba(0, 0, 0, 0.548);
+}
+.skill .loading{
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+.skill .loading svg{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    transform: rotate(270deg);
+}
+.skill .loading svg circle{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    stroke-width: 2;
+    stroke: #888;
+    fill: transparent;
+    transform: translate(5px, 5px);
+}
+.skill .loading svg circle:nth-child(2){
+    stroke: var(--color);
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440 * var(--num) / 100));
+    opacity: 0;
+    animation: on 1s linear 2s forwards;
+}
+@keyframes on {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.skill .dot{
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+    transform: rotate(calc(3.5deg * var(--num)));
+    animation: rotar 2s linear forwards;
+}
+@keyframes rotar {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(calc(3.5deg * var(--num)));
+    }
+}
+.skill .dot::before{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color);
+    top: -5px;
+    left: 50%;
+    transform: translateX(50%);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px var(--color),
+                0px 0px 30px var(--color);
+}
+.skill .skill-data{
+    position: absolute;
+    color: #fff;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: on 1.5s linear 2s forwards;
+}
+.skill .skill-data h2{
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.skill .skill-data h2 span{
+    font-weight: 300;
+    font-size: 20px;
+}
+.skill .skill-data p{
+    font-weight: 300;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 5px;
+}

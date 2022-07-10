@@ -1,0 +1,20 @@
+.container{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    background: var(--prim);
+}
+.container .skills{
+    width: 70%;
+    margin: auto;
+    padding: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 1020px) {
+    .container .skills{
+      grid-template-columns: 1fr 1fr;  
+    }
+    
+}

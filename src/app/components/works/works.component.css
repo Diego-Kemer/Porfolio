@@ -1,0 +1,17 @@
+.container{
+    width: 100%;
+    background: var(--prim);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 50px auto;
+}
+.container .works{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
