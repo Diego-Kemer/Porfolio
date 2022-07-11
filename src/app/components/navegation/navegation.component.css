@@ -1,0 +1,40 @@
+.container{
+    position: sticky;
+    top: 30%;
+}
+.redes{
+    position: absolute;
+    color: #fff;
+    right: 20px;
+    z-index: 10;
+}
+.redes .red{
+    position: relative;
+    height: 100%;
+}
+.redes .red hr{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 50vh;
+    width: 1px;
+    z-index: 1;
+}
+.redes .red .enlaces{
+    position: relative;
+    height: 50vh;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+.redes .red a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 20px;
+    display: block;
+    background-color: var(--prim);
+}

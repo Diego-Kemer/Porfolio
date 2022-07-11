@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IEstudio } from 'src/app/interfaces/iestudio';
 import { IUser } from 'src/app/interfaces/iuser';
 import { environment } from 'src/environments/environment';
 
@@ -13,5 +14,9 @@ export class ApiService {
   constructor(private http: HttpClient) { }
   traerUsuario(): Observable<IUser>{
     return this.http.get<IUser>(`${this.url}/usuario/14`)
+  }
+
+  traerEstudio(): Observable<Array<IEstudio>>{
+    return this.http.get<Array<IEstudio>>(`${this.url}/estudios`)
   }
 }

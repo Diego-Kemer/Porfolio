@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ITrabajo } from 'src/app/interfaces/itrabajo';
 
 @Component({
   selector: 'app-experiences',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiences.component.css']
 })
 export class ExperiencesComponent implements OnInit {
-
+  @Input() experinces!: Array<ITrabajo>;
   constructor() { }
 
   ngOnInit(): void {

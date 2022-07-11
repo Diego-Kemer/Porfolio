@@ -1,6 +1,7 @@
-<app-header></app-header>
-<app-about></app-about>
-<app-experiences></app-experiences>
-<app-education></app-education>
-<app-skills></app-skills>
-<app-works></app-works>
+<app-header [name]="user?.name" [lastname]="user?.lastname"></app-header>
+<app-navegation></app-navegation>
+<app-about id="about"></app-about>
+<app-experiences [experinces]="user?.trabajos" id="experience"></app-experiences>
+<app-education [estudios]="user?.estudios" id="education"></app-education>
+<app-skills id="skills"></app-skills>
+<app-works id="works"></app-works>

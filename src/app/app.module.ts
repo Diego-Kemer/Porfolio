@@ -16,6 +16,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ItemSkillComponent } from './components/item-skill/item-skill.component';
 import { WorksComponent } from './components/works/works.component';
 import { ItemWorkComponent } from './components/item-work/item-work.component';
+import { NavegationComponent } from './components/navegation/navegation.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ItemWorkComponent } from './components/item-work/item-work.component';
     SkillsComponent,
     ItemSkillComponent,
     WorksComponent,
-    ItemWorkComponent
+    ItemWorkComponent,
+    NavegationComponent
   ],
   imports: [
     BrowserModule,

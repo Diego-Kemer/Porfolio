@@ -1,12 +1,14 @@
 <div class="container">
     <img src="assets/img/deadpool_PNG3.png" alt="">
-    <h3>Título</h3>
+    <h3>{{data?.titulo}}</h3>
     <div class="lista">
-        <li>Institución</li>
-        <li>Duración</li>
-        <li>Fecha inicio</li>
-        <li>Fecha fin</li>
-        <li>Modalidad</li>
+        <li><b>Institución:</b> {{data?.institucion?.name}}</li>
+        <li><b>Localidad:</b> {{data?.institucion?.localidad?.name}}</li>
+        <li><b>Provincia:</b> {{data?.institucion?.localidad?.provincia?.name}}</li>
+        <li><b>Duración:</b> </li>
+        <li><b>Fecha inicio:</b> {{data?.fecha_inicio}}</li>
+        <li><b>Fecha fin: </b>{{data?.fecha_fin}} </li>
+        <li><b>Modalidad:</b> {{data?.modalidad?.modalidad}}</li>
     </div>
     <i class="icofont-book"></i>
 </div>
