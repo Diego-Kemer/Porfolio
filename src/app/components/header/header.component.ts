@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() name!: string;
   @Input() lastname!: string;
+  public editar: boolean = true;
 
   constructor() { }
 

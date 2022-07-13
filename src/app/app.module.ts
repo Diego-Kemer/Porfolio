@@ -17,6 +17,10 @@ import { ItemSkillComponent } from './components/item-skill/item-skill.component
 import { WorksComponent } from './components/works/works.component';
 import { ItemWorkComponent } from './components/item-work/item-work.component';
 import { NavegationComponent } from './components/navegation/navegation.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { FormUserComponent } from './components/form-user/form-user.component';
 
 @NgModule({
   declarations: [
@@ -33,12 +37,15 @@ import { NavegationComponent } from './components/navegation/navegation.componen
     ItemSkillComponent,
     WorksComponent,
     ItemWorkComponent,
-    NavegationComponent
+    NavegationComponent,
+    FormUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

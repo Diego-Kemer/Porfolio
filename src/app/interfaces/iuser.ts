@@ -2,6 +2,7 @@ import { IEstudio } from "./iestudio";
 import { ITrabajo } from "./itrabajo";
 
 export interface IUser {
+    foto_portada: string,
     dni: string,
     edad: number,
     estudios: Array<IEstudio>,
