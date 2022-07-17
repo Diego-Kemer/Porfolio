@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() name!: string;
   @Input() lastname!: string;
-  public editar: boolean = true;
+  public editar = this.uiServ.encender$;
 
-  constructor() { }
+  constructor( private uiServ: UiServiceService) { }
 
   ngOnInit(): void {
   }
+  mostrar():void{
+    this.uiServ.show()
+  }
+
 
 }

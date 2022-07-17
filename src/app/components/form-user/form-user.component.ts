@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
   selector: 'app-form-user',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormUserComponent implements OnInit {
 
-  constructor() { }
+  constructor( private uiServ: UiServiceService) { }
 
   ngOnInit(): void {
+  }
+  ocultar(): void{
+    this.uiServ.hidden()
   }
 
 }

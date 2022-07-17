@@ -13,7 +13,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
   traerUsuario(): Observable<IUser>{
-    return this.http.get<IUser>(`${this.url}/usuario/14`)
+    return this.http.get<IUser>(`${this.url}/usuario/16`)
   }
 
   traerEstudio(): Observable<Array<IEstudio>>{

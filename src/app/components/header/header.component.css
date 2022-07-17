@@ -12,11 +12,13 @@
     display: flex;
     justify-content: space-around;
 }
+
 .contenido .texto{
     color: #fff;
     font-size: 25px;
     width: 40%;
     animation: izquierda 2s;
+    position: relative;
 
 }
 @keyframes izquierda {
@@ -41,7 +43,7 @@
     box-shadow: 1px 1px 10px rgb(252, 145, 5, 0.2),
                 -1px -1px 10px rgba(252, 145, 5, 0.2);
 }
-.contenido .texto button i{
+.contenido .texto button i.icofont-arrow-right{
     margin-left: 20px;
     font-weight: lighter;
 }
@@ -49,6 +51,17 @@
     animation: derecha 2s;
     width: 30%;
     text-align: center;
+}
+.contenido .texto button.contacto{
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    box-shadow: none;
 }
 @keyframes derecha {
     0%{transform: translateX(100%); opacity: 0;}

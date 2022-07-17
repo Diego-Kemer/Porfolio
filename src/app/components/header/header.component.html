@@ -1,6 +1,7 @@
 <div class="contenedor">
     <div class="contenido">
         <div class="texto">
+            <button (click)="mostrar()" class="contacto"><i class="icofont-edit-alt"></i></button>
             <h1>{{name}} {{lastname}}</h1>
             <p>Web developer Full-Stack. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea reprehenderit
                 maxime soluta fuga asperiores minus, aut libero amet.</p>
@@ -26,4 +27,4 @@
 
     </div>
 </div>
-<app-form-user *ngIf="editar"></app-form-user>
+<app-form-user *ngIf="editar | async"></app-form-user>
