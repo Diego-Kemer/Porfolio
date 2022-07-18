@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IUser } from 'src/app/interfaces/iuser';
 import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
@@ -7,8 +8,7 @@ import { UiServiceService } from 'src/app/services/ui/ui-service.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() name!: string;
-  @Input() lastname!: string;
+  @Input() user!: IUser;
   public editar = this.uiServ.encender$;
 
   constructor( private uiServ: UiServiceService) { }

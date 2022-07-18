@@ -2,7 +2,7 @@
     <div class="contenido">
         <div class="texto">
             <button (click)="mostrar()" class="contacto"><i class="icofont-edit-alt"></i></button>
-            <h1>{{name}} {{lastname}}</h1>
+            <h1>{{user?.name}} {{user?.lastname}}</h1>
             <p>Web developer Full-Stack. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea reprehenderit
                 maxime soluta fuga asperiores minus, aut libero amet.</p>
             <button>Contactar <i class="icofont-arrow-right"></i></button>
@@ -27,4 +27,4 @@
 
     </div>
 </div>
-<app-form-user *ngIf="editar | async"></app-form-user>
+<app-form-user [user]="user" *ngIf="editar | async"></app-form-user>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { IUser } from 'src/app/interfaces/iuser';
 import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
@@ -7,10 +9,32 @@ import { UiServiceService } from 'src/app/services/ui/ui-service.service';
   styleUrls: ['./form-user.component.css']
 })
 export class FormUserComponent implements OnInit {
+  @Input() user!: IUser;
 
-  constructor( private uiServ: UiServiceService) { }
-
+  constructor( private uiServ: UiServiceService, private formB: FormBuilder) { }
+  public formG!: FormGroup;
   ngOnInit(): void {
+    this.formG = this.formB.group({
+      name: 'holo',
+      lastname: '',
+      dni: '',
+      edad: '',
+      nacionalidad: '',
+      fecha_nac: '',
+      foto_portada: '',
+      sobre_mi: ''
+
+    })
+     this.formG.patchValue({
+       name: this.user.name,
+       lastname: this.user.lastname,
+       dni: this.user.dni,
+       edad: this.user.edad,
+       nacionalidad: this.user.nacionalidad,
+       fecha_nac: this.user.fecha_nac,
+       foto_portada: this.user.foto_portada,
+       sobre_mi: this.user.sobre_mi
+     })
   }
   ocultar(): void{
     this.uiServ.hidden()
