@@ -19,4 +19,8 @@ export class ApiService {
   traerEstudio(): Observable<Array<IEstudio>>{
     return this.http.get<Array<IEstudio>>(`${this.url}/estudios`)
   }
+
+  actualizarUser(user: IUser): Observable<void>{
+    return this.http.put<void>(`${this.url}/usuario`, user)
+  }
 }

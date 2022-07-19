@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ITrabajo } from 'src/app/interfaces/itrabajo';
+import { IUser } from 'src/app/interfaces/iuser';
 
 @Component({
   selector: 'app-experiences',
@@ -7,7 +8,7 @@ import { ITrabajo } from 'src/app/interfaces/itrabajo';
   styleUrls: ['./experiences.component.css']
 })
 export class ExperiencesComponent implements OnInit {
-  @Input() experinces!: Array<ITrabajo>;
+  @Input() experinces!: IUser;
   constructor() { }
 
   ngOnInit(): void {

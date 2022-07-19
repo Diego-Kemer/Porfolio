@@ -17,3 +17,10 @@
     background: var(--prim);
     padding: 10px 0px;
 }
+.container .contacto{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #fff;
+}

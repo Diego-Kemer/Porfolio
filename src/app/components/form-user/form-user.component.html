@@ -12,7 +12,7 @@
         </div>
         <div class="block-form">
             <label for="dni">DNI:</label>
-            <input formControlName="dni" id="dni" type="number">
+            <input formControlName="dni" id="dni" type="text">
         </div>
         <div class="block-form">
             <label for="edad">Edad</label>
@@ -23,16 +23,20 @@
             <input formControlName="nacionalidad" id="nacionalidad" type="text">
         </div>
         <div class="block-form">
-            <label for="fecha_nac">Fecha de nacimiento:</label>
+            <label for="fecha_nac">Fecha de nacimiento: </label>
             <input formControlName="fecha_nac" id="fecha_nac" type="date">
         </div>
-        <div class="block-form">
+        <div class="block-form portada">
             <label for="foto_portada">Foto de portada:</label>
-            <input formControlName="foto_portada" id="foto_portada" type="file">
+            <input id="foto_portada" type="file" hidden>
+            <img src="{{user?.foto_portada}}" alt="">
         </div>
         <div class="block-text">
             <label for="about">Sobre mí:</label>
             <textarea formControlName="sobre_mi" name="about" id="about" cols="30" rows="10"></textarea>
+        </div>
+        <div class="block-text">
+            <button (click)="send()">Editar</button>
         </div>
     </div>
 </div>

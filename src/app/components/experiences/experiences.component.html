@@ -2,8 +2,7 @@
     <div class="container">
        <h2>Experiencia laboral</h2> 
        <div class="experience">
-        <app-work-experience></app-work-experience>
-        <app-work-experience></app-work-experience>
+        <app-work-experience *ngFor="let item of experinces?.trabajos" [work]="item"></app-work-experience>
        </div>
     </div>
 </div>

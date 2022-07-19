@@ -22,6 +22,7 @@ import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FormUserComponent } from './components/form-user/form-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormExpWorkComponent } from './components/form-exp-work/form-exp-work.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     WorksComponent,
     ItemWorkComponent,
     NavegationComponent,
-    FormUserComponent
+    FormUserComponent,
+    FormExpWorkComponent
   ],
   imports: [
     BrowserModule,

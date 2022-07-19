@@ -1,10 +1,12 @@
 <div class="container">
+    <button (click)="mostrar()" class="contacto"><i class="icofont-edit-alt"></i></button>
     <h3>Empresa</h3>
     <div class="lista">
-        <li>Puesto</li>
-        <li>Fecha inicio</li>
-        <li>Fecha fin</li>
-        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, enim totam? Mollitia magnam aliquid quod recusandae aut et molestias error.</li>
+        <li>Puesto: {{work?.titulo}}</li>
+        <li>Fecha inicio: {{work?.fecha_inicio}}</li>
+        <li>Fecha fin: {{work?.fecha_fin}}</li>
+        <li>Descripción: {{work?.description}}</li>
     </div>
     <i class="icofont-briefcase"></i>
 </div>
+<app-form-exp-work *ngIf="exp_edit" (exp_edit)="oculta()"></app-form-exp-work>

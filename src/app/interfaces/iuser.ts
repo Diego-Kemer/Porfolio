@@ -6,7 +6,7 @@ export interface IUser {
     dni: string,
     edad: number,
     estudios: Array<IEstudio>,
-    fecha_nac: string,
+    fecha_nac: Date,
     idusuario: number,
     lastname: string,
     nacionalidad: string,

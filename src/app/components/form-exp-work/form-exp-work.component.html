@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="contenedor" [formGroup]="formGroup">
+        <button (click)="ocultar()" class="cerrar"><i class="icofont-close"></i></button>
+        <h1>Editar experiencia laboral</h1>
+        <div class="block-form">
+            <label for="name">Título:</label>
+            <input formControlName="titulo" id="name" type="text">
+        </div>
+        <div class="block-form">
+            <label for="lastname">Fecha de inicio:</label>
+            <input formControlName="fecha_inicio" id="lastname" type="date">
+        </div>
+        <div class="block-form">
+            <label for="dni">Fecha de finalización:</label>
+            <input formControlName="fecha_fin" id="dni" type="date">
+        </div>
+        
+        <div class="block-text">
+            <label for="about">Descripción:</label>
+            <textarea formControlName="description" name="about" id="about" cols="30" rows="10"></textarea>
+        </div>
+        <div class="block-text">
+            <button (click)="send()">Editar</button>
+        </div>
+    </div>
+</div>
+

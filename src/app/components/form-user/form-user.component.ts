@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { IUser } from 'src/app/interfaces/iuser';
+import { ApiService } from 'src/app/services/api/api.service';
 import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
@@ -11,16 +12,19 @@ import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 export class FormUserComponent implements OnInit {
   @Input() user!: IUser;
 
-  constructor( private uiServ: UiServiceService, private formB: FormBuilder) { }
+  constructor(  private uiServ: UiServiceService, 
+                private formB: FormBuilder,
+                private apiServ: ApiService) { }
   public formG!: FormGroup;
   ngOnInit(): void {
     this.formG = this.formB.group({
-      name: 'holo',
+      idusuario: 16,
+      name: '',
       lastname: '',
       dni: '',
       edad: '',
       nacionalidad: '',
-      fecha_nac: '',
+      fecha_nac: Date,
       foto_portada: '',
       sobre_mi: ''
 
@@ -38,6 +42,14 @@ export class FormUserComponent implements OnInit {
   }
   ocultar(): void{
     this.uiServ.hidden()
+  }
+
+  send():void{
+    console.log(this.formG.value)
+    this.apiServ.actualizarUser(this.formG.value).subscribe(res=>{
+      console.log(res)
+    })
+    
   }
 
 }
