@@ -8,7 +8,7 @@ import { IUser } from 'src/app/interfaces/iuser';
   styleUrls: ['./experiences.component.css']
 })
 export class ExperiencesComponent implements OnInit {
-  @Input() experinces!: IUser;
+  @Input() user!: IUser;
   constructor() { }
 
   ngOnInit(): void {

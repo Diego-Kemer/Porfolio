@@ -45,9 +45,8 @@ export class FormUserComponent implements OnInit {
   }
 
   send():void{
-    console.log(this.formG.value)
     this.apiServ.actualizarUser(this.formG.value).subscribe(res=>{
-      console.log(res)
+      this.uiServ.hidden()
     })
     
   }

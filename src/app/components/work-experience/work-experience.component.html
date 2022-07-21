@@ -1,12 +1,12 @@
-<div class="container">
-    <button (click)="mostrar()" class="contacto"><i class="icofont-edit-alt"></i></button>
-    <h3>Empresa</h3>
+<div class="container" *ngIf="!exp_edit">
+    <button (click)="mostrar()" title="Editar" class="contacto"><i class="icofont-edit-alt"></i></button>
+    <h3>{{work?.titulo}}</h3>
     <div class="lista">
         <li>Puesto: {{work?.titulo}}</li>
-        <li>Fecha inicio: {{work?.fecha_inicio}}</li>
-        <li>Fecha fin: {{work?.fecha_fin}}</li>
+        <li>Fecha inicio: {{work?.fecha_inicio | date}}</li>
+        <li>Fecha fin: {{work?.fecha_fin | date}}</li>
         <li>Descripción: {{work?.description}}</li>
     </div>
     <i class="icofont-briefcase"></i>
 </div>
-<app-form-exp-work *ngIf="exp_edit" (exp_edit)="oculta()"></app-form-exp-work>
+<app-form-exp-work *ngIf="exp_edit" [usuario]="user"  [work]="work" (newWork)="actualiza($event)" (exp_edit)="oculta()"></app-form-exp-work>

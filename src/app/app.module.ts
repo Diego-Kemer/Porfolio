@@ -23,6 +23,8 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { FormUserComponent } from './components/form-user/form-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormExpWorkComponent } from './components/form-exp-work/form-exp-work.component';
+import { FormAboutComponent } from './components/form-about/form-about.component';
+import { FormEducationComponent } from './components/form-education/form-education.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { FormExpWorkComponent } from './components/form-exp-work/form-exp-work.c
     ItemWorkComponent,
     NavegationComponent,
     FormUserComponent,
-    FormExpWorkComponent
+    FormExpWorkComponent,
+    FormAboutComponent,
+    FormEducationComponent
   ],
   imports: [
     BrowserModule,

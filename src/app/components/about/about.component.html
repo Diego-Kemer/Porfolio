@@ -1,7 +1,9 @@
 <div class="conteiner">
-    <div class="contenedor">
+    <div class="contenedor" *ngIf="!editarAbout">
+        <button (click)="editar()" class="edit"><i class="icofont-edit-alt"></i></button>
         <img src={{usuario?.foto_portada}} alt="Diego Kemer">
         <p>{{usuario?.sobre_mi}}
         </p>
     </div>
+    <app-form-about *ngIf="editarAbout"  (cierre)="noEditar()" [user]="usuario"></app-form-about>
 </div>

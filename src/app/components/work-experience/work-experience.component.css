@@ -4,6 +4,7 @@
     font-size: 20px;
     border-left: solid 1px #fff;
     padding-left: 50px;
+    margin-right: 50px;
     position: relative;
     font-size: 20px;
 }
@@ -19,8 +20,15 @@
 }
 .container .contacto{
     position: absolute;
-    right: 10px;
+    right: 40px;
     top: 10px;
+    font-size: 30px;
     cursor: pointer;
     color: #fff;
+    border: none;
+    outline: none;
+    transition: all .5s ease-in-out;
+}
+.contacto:hover{
+    transform: scale(1.2);
 }

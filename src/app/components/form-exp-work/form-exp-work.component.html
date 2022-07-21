@@ -1,27 +1,14 @@
-<div class="container">
-    <div class="contenedor" [formGroup]="formGroup">
-        <button (click)="ocultar()" class="cerrar"><i class="icofont-close"></i></button>
-        <h1>Editar experiencia laboral</h1>
-        <div class="block-form">
-            <label for="name">Título:</label>
-            <input formControlName="titulo" id="name" type="text">
-        </div>
-        <div class="block-form">
-            <label for="lastname">Fecha de inicio:</label>
-            <input formControlName="fecha_inicio" id="lastname" type="date">
-        </div>
-        <div class="block-form">
-            <label for="dni">Fecha de finalización:</label>
-            <input formControlName="fecha_fin" id="dni" type="date">
-        </div>
-        
-        <div class="block-text">
-            <label for="about">Descripción:</label>
-            <textarea formControlName="description" name="about" id="about" cols="30" rows="10"></textarea>
-        </div>
-        <div class="block-text">
-            <button (click)="send()">Editar</button>
-        </div>
-    </div>
-</div>
 
+ <div class="container"  [formGroup]="formGroup">
+    <button class="edit" title="Cancelar" (click)="ocultar()"><i class="icofont-close"></i></button>
+    <button class="edit save" title="Guardar" (click)="send()"><i class="icofont-save"></i></button>
+
+    <h3>Editar experiencia laboral</h3>
+    <div class="lista">
+        <li>Título: <input formControlName="titulo" id="name" type="text"></li>
+        <li>Fecha de inicio: <input formControlName="fecha_inicio" type="date"></li>
+        <li>Fecha de finalización: <input formControlName="fecha_fin" type="date"></li>
+        <li><p class="descripcion">Descripción: <textarea formControlName="description" name="about" ols="100" rows="auto"></textarea></p> </li>
+    </div>
+    <i class="icofont-briefcase"></i>
+</div>

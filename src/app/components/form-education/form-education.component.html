@@ -1,0 +1,15 @@
+<div class="container"  [formGroup]="formGroup">
+    <button class="edit" title="Cancelar" (click)="ocultar()"><i class="icofont-close"></i></button>
+    <button class="edit save" title="Guardar" (click)="send()"><i class="icofont-save"></i></button>
+
+    <h3>Editar datos</h3>
+    <div class="lista">
+        <li>Institución: <input formControlName="institucion" id="name" type="text"></li>
+        <li>Provincia: <input formControlName="provincia" type="text"></li>
+        <li>Localidad: <input formControlName="localidad" type="text"></li>
+        <li>Fecha inicio: <input formControlName="fecha_inicio" type="date"></li>
+        <li>Fecha de finalización: <input formControlName="fecha_fin" type="date"></li>
+        <li>Modalidad: <input formControlName="modalidad" type="text"></li>
+    </div>
+    <i class="icofont-briefcase"></i>
+</div>

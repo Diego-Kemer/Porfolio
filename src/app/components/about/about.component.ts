@@ -7,9 +7,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
   @Input() usuario!: any;
+  editarAbout: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  editar():void{
+    this.editarAbout = true;
+  }
+
+  noEditar(){
+    this.editarAbout = false;
+    console.log('ok')
   }
 
 }

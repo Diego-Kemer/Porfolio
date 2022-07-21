@@ -8,9 +8,17 @@ import { IEstudio } from 'src/app/interfaces/iestudio';
 })
 export class ItemEducationComponent implements OnInit {
   @Input() data!: IEstudio;
+  editar: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  mostrar(){
+    this.editar = true
+  }
+
+  oculta(){
+    this.editar = false
+  }
 }

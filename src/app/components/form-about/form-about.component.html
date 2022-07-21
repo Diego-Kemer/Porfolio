@@ -1,0 +1,14 @@
+<div class="contenedor" [formGroup]="formAbout">
+    <button class="edit" (click)="cerrar()"><i class="icofont-close"></i></button>
+    <button class="edit save" (click)="send()"><i class="icofont-save"></i></button>
+    <div class="img">
+        <label for="foto_portada">Cambiar foto</label>
+        <input id="foto_portada" type="file" accept=".jpg" (change)="uploadImg($event)" hidden>
+        <input type="text" formControlName="foto_portada" hidden value="{{image}}">
+        <img src="{{image}}" alt="">
+    </div>
+
+    <div class="block-text">
+        <textarea formControlName="sobre_mi" name="about" id="about" cols="30" rows="10"></textarea>
+    </div>
+</div>

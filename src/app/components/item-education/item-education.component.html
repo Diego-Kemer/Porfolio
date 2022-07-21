@@ -1,14 +1,15 @@
-<div class="container">
+<div class="container" *ngIf="!editar">
     <img src="assets/img/deadpool_PNG3.png" alt="">
+    <button (click)="mostrar()" class="contacto"><i class="icofont-edit-alt"></i></button>
     <h3>{{data?.titulo}}</h3>
     <div class="lista">
         <li><b>Institución:</b> {{data?.institucion?.name}}</li>
         <li><b>Localidad:</b> {{data?.institucion?.localidad?.name}}</li>
         <li><b>Provincia:</b> {{data?.institucion?.localidad?.provincia?.name}}</li>
-        <li><b>Duración:</b> </li>
         <li><b>Fecha inicio:</b> {{data?.fecha_inicio}}</li>
         <li><b>Fecha fin: </b>{{data?.fecha_fin}} </li>
         <li><b>Modalidad:</b> {{data?.modalidad?.modalidad}}</li>
     </div>
     <i class="icofont-book"></i>
 </div>
+<app-form-education *ngIf="editar" [data]="data" (cerrar)="oculta()"></app-form-education>

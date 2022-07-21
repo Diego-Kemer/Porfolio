@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ITrabajo } from 'src/app/interfaces/itrabajo';
+import { IUser } from 'src/app/interfaces/iuser';
 import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 export class WorkExperienceComponent implements OnInit {
   exp_edit!: boolean;
   @Input() work!: ITrabajo;
+  @Input() user!: IUser;
 
   constructor() { }
 
@@ -21,6 +23,10 @@ export class WorkExperienceComponent implements OnInit {
   }
   oculta(){
     this.exp_edit = false
+  }
+
+  actualiza(work: ITrabajo){
+    this.work = work;
   }
 
 }

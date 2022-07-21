@@ -3,8 +3,12 @@
         <div class="texto">
             <button (click)="mostrar()" class="contacto"><i class="icofont-edit-alt"></i></button>
             <h1>{{user?.name}} {{user?.lastname}}</h1>
-            <p>Web developer Full-Stack. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea reprehenderit
-                maxime soluta fuga asperiores minus, aut libero amet.</p>
+            <ul>
+                <li><b>Edad:</b> {{user?.edad}}</li>
+                <li><b>Nacionalidad:</b> {{user?.nacionalidad}}</li>
+                <li><b>DNI:</b> {{user?.dni}}</li>
+                <li><b>Fecha de nacimiento:</b> {{user?.fecha_nac}}</li>
+            </ul>
             <button>Contactar <i class="icofont-arrow-right"></i></button>
         </div>
         <div class="imgEIcons">
