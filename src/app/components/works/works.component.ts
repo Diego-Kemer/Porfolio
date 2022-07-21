@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IUser } from 'src/app/interfaces/iuser';
 
 @Component({
   selector: 'app-works',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./works.component.css']
 })
 export class WorksComponent implements OnInit {
-
+  @Input() user!: IUser;
   constructor() { }
 
   ngOnInit(): void {

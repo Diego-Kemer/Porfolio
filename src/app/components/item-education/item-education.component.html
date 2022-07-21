@@ -4,11 +4,11 @@
     <h3>{{data?.titulo}}</h3>
     <div class="lista">
         <li><b>Institución:</b> {{data?.institucion?.name}}</li>
-        <li><b>Localidad:</b> {{data?.institucion?.localidad?.name}}</li>
-        <li><b>Provincia:</b> {{data?.institucion?.localidad?.provincia?.name}}</li>
+        <li><b>Localidad:</b> {{data?.institucion?.localidad}}</li>
+        <li><b>Provincia:</b> {{data?.institucion?.provincia}}</li>
         <li><b>Fecha inicio:</b> {{data?.fecha_inicio}}</li>
         <li><b>Fecha fin: </b>{{data?.fecha_fin}} </li>
-        <li><b>Modalidad:</b> {{data?.modalidad?.modalidad}}</li>
+        <li><b>Modalidad:</b> {{data?.modalidad | titlecase}}</li>
     </div>
     <i class="icofont-book"></i>
 </div>

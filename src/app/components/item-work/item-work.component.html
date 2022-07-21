@@ -4,12 +4,13 @@
             <img src="assets/img/diego.png" alt="">
         </div>
         <div class="acces">
-            <button><i class="icofont-plus"></i></button>
+            <h3>{{proyecto?.name}}</h3>
+            <button title="Detalles"><i class="icofont-plus"></i></button>
             <div class="links">
                 <hr>
                 <div class="icons">
-                    <i class="icofont-dashboard-web"></i>
-                    <i class="icofont-code"></i>
+                    <a title="Ver web" target="_blank" href="{{proyecto?.url}}"><i class="icofont-dashboard-web"></i></a>
+                    <a title="Ver Github" target="_blank" href="{{proyecto?.git_hub}}"><i class="icofont-code"></i></a>
                 </div>
             </div>
         </div>

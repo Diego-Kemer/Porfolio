@@ -1,11 +1,12 @@
 import { IInstitucion } from "./iinstitucion";
-import { IModalidad } from "./imodalidad";
+import { IUser } from "./iuser";
 
 export interface IEstudio {
     id: number,
     titulo: string,
     fecha_inicio: any,
     fecha_fin: any,
-    modalidad: IModalidad,
-    institucion: IInstitucion
+    modalidad: string,
+    institucion: IInstitucion,
+    usuario: IUser
 }
