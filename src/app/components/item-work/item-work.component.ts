@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IProyecto } from 'src/app/interfaces/iproyecto';
 import { IUser } from 'src/app/interfaces/iuser';
+import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
   selector: 'app-item-work',
@@ -11,9 +12,17 @@ export class ItemWorkComponent implements OnInit {
   @Input() user!: IUser;
   @Input() proyecto!: IProyecto;
 
-  constructor() { }
+  constructor(private uiServ: UiServiceService) { }
 
   ngOnInit(): void {
+    this.uiServ.envioArray.emit(this.proyecto)
+  }
+  enviarDatos(proyecto: IProyecto){
+    console.log(proyecto)
+    this.uiServ.datosCarrousel.emit({
+      datos: proyecto,
+      dato: true
+    })
   }
 
 }

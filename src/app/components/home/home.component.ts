@@ -12,11 +12,17 @@ export class HomeComponent implements OnInit {
   constructor(private servApi: ApiService) { }
 
   ngOnInit(): void {
+    this.traerUsuario()
+
+    this.servApi.actualUser.subscribe(res=>{
+      this.traerUsuario()
+    })
+  }
+  traerUsuario(){
     this.servApi.traerUsuario().subscribe(res=>{
       this.user = res;
       console.log(this.user)
     })
-    
   }
 
 }

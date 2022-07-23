@@ -1,13 +1,22 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UiServiceService {
+  @Output() datosCarrousel: EventEmitter<any> = new EventEmitter()
+  @Output() envioArray: EventEmitter<any> = new EventEmitter()
   encender$ = new Subject<boolean>();
+  public reciboArray: Array<any> = []
+  
+  constructor() { 
+    this.envioArray.subscribe(data =>{
+      this.reciboArray = data
+    })
+  }
 
-  constructor() { }
+
   show():void{
     this.encender$.next(true)
   }

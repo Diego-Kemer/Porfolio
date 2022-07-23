@@ -1,0 +1,94 @@
+.grande{
+    position: absolute;
+    background: rgba(29, 29, 28, 0.432);
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 20px 0px;
+    margin: auto;
+    z-index: 29;
+    display: flex;
+    animation: llamar 1s;
+    height: 100%;
+}
+@keyframes llamar {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.grande .boton{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+    cursor: pointer;
+}
+.carousel{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    position: relative;
+}
+.grande .img{
+    width: 100%;
+    margin: auto;
+    box-shadow: 2px 2px 20px rgba(48, 45, 45, 0.856),
+                -2px -2px 20px rgba(48, 45, 45, 0.822);
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 100%;
+}
+.grande .img .contImg{
+    height: 100%;
+}
+.grande .img .contImg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.grande .text{
+    background: #fff;
+    padding: 20px;
+    position: relative;
+    height: 100%;
+}
+.grande .text span{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+    color: #000;
+}
+.grande .text p{
+    text-align: left;
+    margin-top: 20px;
+    color: #000;
+}
+
+
+
+
+
+@media (max-width: 1000px) {
+    .grande .img{
+        grid-template-rows: 60vh;
+    }
+    .carousel{
+        width: 80%;
+        grid-template-rows: 60vh;
+    }
+    
+}
+@media (max-width: 700px){
+    .carousel{
+        width: 90%;
+        position: absolute;
+        top: 150px;
+        left: 10px;
+        right: 10px;
+    }
+    
+}

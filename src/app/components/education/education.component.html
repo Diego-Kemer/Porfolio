@@ -1,8 +1,9 @@
 <div class="contenedor">
     <div class="container">
-        <h2>Formación académica</h2>
+        <h2>Formación académica <i class="icofont-plus"></i></h2>
+        <app-form-education></app-form-education>
         <div class="items">
-            <app-item-education *ngFor="let item of user?.estudios" [data]="item"></app-item-education>
+            <app-item-education *ngFor="let item of user?.estudios" [data]="item" [user]="user"></app-item-education>
         </div>
     </div>
 </div>

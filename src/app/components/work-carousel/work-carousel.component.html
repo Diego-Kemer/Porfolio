@@ -1,0 +1,17 @@
+<div class="grande" *ngIf="llamarCarousel">
+    <button class="boton" (click)="apagar()"><i class="icofont-close"></i></button>
+        <div class="carousel">
+            <div class="img">
+                <div class="contImg">
+                    <img src="{{datosDelCarru.foto_portada}}" alt="">
+                </div>
+                
+                <div class="text">
+                    <span>{{datosDelCarru?.name}}</span>
+                    <p>{{datosDelCarru?.descrption}}</p>
+                </div>
+            </div>
+         </div>
+
+        
+</div>

@@ -25,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormExpWorkComponent } from './components/form-exp-work/form-exp-work.component';
 import { FormAboutComponent } from './components/form-about/form-about.component';
 import { FormEducationComponent } from './components/form-education/form-education.component';
+import { WorkCarouselComponent } from './components/work-carousel/work-carousel.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { FormEducationComponent } from './components/form-education/form-educati
     FormUserComponent,
     FormExpWorkComponent,
     FormAboutComponent,
-    FormEducationComponent
+    FormEducationComponent,
+    WorkCarouselComponent
   ],
   imports: [
     BrowserModule,

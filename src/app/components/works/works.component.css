@@ -8,10 +8,13 @@
     text-align: center;
     color: #fff;
     padding: 50px auto;
+    position: relative;
 }
 .container .works{
     width: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+    
 }
