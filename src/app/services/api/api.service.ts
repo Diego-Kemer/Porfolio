@@ -3,6 +3,7 @@ import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IEstudio } from 'src/app/interfaces/iestudio';
 import { IInstitucion } from 'src/app/interfaces/iinstitucion';
+import { IProyecto } from 'src/app/interfaces/iproyecto';
 import { ITrabajo } from 'src/app/interfaces/itrabajo';
 import { IUser } from 'src/app/interfaces/iuser';
 import { environment } from 'src/environments/environment';
@@ -37,5 +38,9 @@ export class ApiService {
 
   actualizarEstudio(est: IEstudio): Observable<any>{
     return this.http.put<any>(`${this.url}/estudio`, est)
+  }
+
+  actualizarProyecto(proy: IProyecto): Observable<any>{
+    return this.http.put<any>(`${this.url}/proyecto`, proy)
   }
 }

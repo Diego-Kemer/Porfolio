@@ -1,0 +1,38 @@
+<div class="grande" >
+    <button class="boton" (click)="apagar()"><i class="icofont-close"></i></button>
+    <button class="boton save" (click)="send()"><i class="icofont-save"></i></button>
+        <div class="carousel" [formGroup]="formProy">
+            <div class="img">
+                <div class="contImg">
+                    <div class="imgPerfil">
+                        <img src="{{imgage1}}" alt="">
+                        <label for="img1"><i class="icofont-image"></i></label>
+                        <input (change)="uploadImg($event, 1)" type="file" id="img1" hidden>
+                    </div>
+                    <div class="otrasImg">
+                        <div class="img-sec">
+                            <img src="{{imgage2}}" alt="">  
+                           <label for="img2"><i class="icofont-image"></i></label>
+                           <input (change)="uploadImg($event, 2)" type="file" id="img2" hidden>
+                        </div>
+                        <div class="img-sec">
+                           <img src="{{imgage3}}" alt="">  
+                           <label for="img3"><i class="icofont-image"></i></label>
+                           <input (change)="uploadImg($event, 3)" type="file" hidden id="img3">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text">
+                    <div class="block-titulo">
+                        <label for="titulo">Titulo:</label>
+                        <input formControlName="name" value="{{proyecto.name}}" type="text" id="titulo">
+                    </div>
+                    <div class="block-description">
+                        <label for="description">Descrption:</label>
+                        <textarea formControlName="descrption" value="{{proyecto.descrption}}" name="description" id="description" cols="30"></textarea>
+                    </div>
+                </div>
+            </div>
+         </div>      
+</div>

@@ -26,6 +26,7 @@ import { FormExpWorkComponent } from './components/form-exp-work/form-exp-work.c
 import { FormAboutComponent } from './components/form-about/form-about.component';
 import { FormEducationComponent } from './components/form-education/form-education.component';
 import { WorkCarouselComponent } from './components/work-carousel/work-carousel.component';
+import { FormProyectoComponent } from './components/form-proyecto/form-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { WorkCarouselComponent } from './components/work-carousel/work-carousel.
     FormExpWorkComponent,
     FormAboutComponent,
     FormEducationComponent,
-    WorkCarouselComponent
+    WorkCarouselComponent,
+    FormProyectoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IProyecto } from 'src/app/interfaces/iproyecto';
 import { IUser } from 'src/app/interfaces/iuser';
+import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
   selector: 'app-works',
@@ -8,9 +10,24 @@ import { IUser } from 'src/app/interfaces/iuser';
 })
 export class WorksComponent implements OnInit {
   @Input() user!: IUser;
-  constructor() { }
+  edit: boolean = false;
+  proyecto!: IProyecto;
+  constructor(private uiServ: UiServiceService) { }
 
   ngOnInit(): void {
+    this.uiServ.editamos.subscribe(res =>{
+      this.proyecto = res;
+      this.edit = true
+    })
   }
 
+  off(){
+    this.edit = false
+  }
+  
+
+
+  datosEditar(){
+
+  }
 }

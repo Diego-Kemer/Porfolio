@@ -4,9 +4,9 @@ import { ITrabajo } from "./itrabajo";
 
 export interface IUser {
     foto_portada: string,
-    dni: string,
+    profesion: string,
+    nivel: string,
     edad: number,
-    fecha_nac: Date,
     idusuario: number,
     lastname: string,
     nacionalidad: string,

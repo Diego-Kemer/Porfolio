@@ -2,9 +2,10 @@
     width: 413px;
     height: 339px;
     background: #581b4e;
-    margin: 30px;
+    margin: 70px 30px;
     border-radius: 10px;
     overflow: hidden;
+    position: relative;
 }
 .container .work{
     height: 100%;
@@ -74,4 +75,15 @@
     background: #581b4e;
     font-size: 20px;
     color: #fff;
+}
+
+.edit{
+    position: absolute;
+    color: #fff;
+    background: #000;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
 }

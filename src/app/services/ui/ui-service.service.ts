@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class UiServiceService {
   @Output() datosCarrousel: EventEmitter<any> = new EventEmitter()
   @Output() envioArray: EventEmitter<any> = new EventEmitter()
+  @Output() editamos: EventEmitter<any> = new EventEmitter()
   encender$ = new Subject<boolean>();
   public reciboArray: Array<any> = []
   

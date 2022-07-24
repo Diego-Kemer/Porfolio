@@ -1,7 +1,8 @@
 <div class="container">
+    <button (click)="editar(proyecto)" class="edit"><i class="icofont-edit-alt"></i></button>
     <div class="work">
         <div class="img">
-            <img src="assets/img/diego.png" alt="">
+            <img src="{{proyecto?.foto_portada}}" alt="">
         </div>
         <div class="acces">
             <h3>{{proyecto?.name}}</h3>

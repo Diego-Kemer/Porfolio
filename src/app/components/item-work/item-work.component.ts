@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IProyecto } from 'src/app/interfaces/iproyecto';
 import { IUser } from 'src/app/interfaces/iuser';
 import { UiServiceService } from 'src/app/services/ui/ui-service.service';
@@ -11,7 +11,7 @@ import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 export class ItemWorkComponent implements OnInit {
   @Input() user!: IUser;
   @Input() proyecto!: IProyecto;
-
+  
   constructor(private uiServ: UiServiceService) { }
 
   ngOnInit(): void {
@@ -23,6 +23,10 @@ export class ItemWorkComponent implements OnInit {
       datos: proyecto,
       dato: true
     })
+  }
+
+  editar(proyecto: any){
+    this.uiServ.editamos.emit(proyecto)
   }
 
 }

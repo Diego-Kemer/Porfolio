@@ -9,6 +9,7 @@
     color: #fff;
     padding: 50px auto;
     position: relative;
+    min-height: max-content;
 }
 .container .works{
     width: 70%;
@@ -16,5 +17,6 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    
+    align-content: center;
+    background: var(--prim);
 }

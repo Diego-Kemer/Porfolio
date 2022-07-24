@@ -23,10 +23,10 @@ export class FormAboutComponent implements OnInit {
       idusuario: 16,
       name: this.user.name,
       lastname: this.user.lastname,
-      dni: this.user.dni,
+      profesion: this.user.profesion,
       edad: this.user.edad,
       nacionalidad: this.user.nacionalidad,
-      fecha_nac: this.user.fecha_nac,
+      nivel: this.user.nivel,
       foto_portada: this.image,
       sobre_mi: '',
     })
@@ -34,10 +34,10 @@ export class FormAboutComponent implements OnInit {
     this.formAbout.patchValue({
       name: this.user.name,
       lastname: this.user.lastname,
-      dni: this.user.dni,
+      profesion: this.user.profesion,
       edad: this.user.edad,
       nacionalidad: this.user.nacionalidad,
-      fecha_nac: this.user.fecha_nac,
+      nivel: this.user.nivel,
       foto_portada: this.user.foto_portada,
       sobre_mi: this.user.sobre_mi
     })

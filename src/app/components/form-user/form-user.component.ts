@@ -18,13 +18,13 @@ export class FormUserComponent implements OnInit {
   public formG!: FormGroup;
   ngOnInit(): void {
     this.formG = this.formB.group({
-      idusuario: 16,
+      idusuario: 2,
       name: '',
       lastname: '',
-      dni: '',
+      profesion: '',
       edad: '',
       nacionalidad: '',
-      fecha_nac: Date,
+      nivel: '',
       foto_portada: '',
       sobre_mi: ''
 
@@ -32,10 +32,10 @@ export class FormUserComponent implements OnInit {
      this.formG.patchValue({
        name: this.user.name,
        lastname: this.user.lastname,
-       dni: this.user.dni,
+       profesion: this.user.profesion,
        edad: this.user.edad,
        nacionalidad: this.user.nacionalidad,
-       fecha_nac: this.user.fecha_nac,
+       nivel: this.user.nivel,
        foto_portada: this.user.foto_portada,
        sobre_mi: this.user.sobre_mi
      })
@@ -46,6 +46,7 @@ export class FormUserComponent implements OnInit {
 
   send():void{
     this.apiServ.actualizarUser(this.formG.value).subscribe(res=>{
+      this.apiServ.actualUser.emit()
       this.uiServ.hidden()
     })
     

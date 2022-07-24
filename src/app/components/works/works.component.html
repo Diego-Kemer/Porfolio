@@ -3,5 +3,7 @@
     <div class="works">
         <app-item-work *ngFor="let item of user?.proyectos" [proyecto]="item" [user]="user"></app-item-work>
         <app-work-carousel></app-work-carousel>
+        
     </div>
+    <app-form-proyecto *ngIf="edit" [proyecto]="proyecto" [user]="user" (apaga)="off()"></app-form-proyecto>
 </div>
