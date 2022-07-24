@@ -15,14 +15,13 @@ export class FormExpWorkComponent implements OnInit {
   @Input() work: any;
   @Input() usuario!: IUser;
   @Output() exp_edit = new EventEmitter<boolean>();
-  @Output() newWork = new EventEmitter<ITrabajo>();
 
   constructor(private formB: FormBuilder,
               private apiServ: ApiService) { }
 
   ngOnInit(): void {
     this.formGroup = this.formB.group({
-      id: this.work.id,
+      id: Number,
       fecha_inicio: '',
       fecha_fin: '',
       description: '',
@@ -30,23 +29,34 @@ export class FormExpWorkComponent implements OnInit {
       usuario: this.usuario
     })
 
-    this.formGroup.patchValue({
-      id: this.work.id,
-      fecha_inicio: this.work.fecha_inicio,
-      fecha_fin: this.work.fecha_fin,
-      description: this.work.description,
-      titulo: this.work.titulo
+    if(this.work){
+      this.formGroup.patchValue({
+        id: this.work.id,
+        fecha_inicio: this.work.fecha_inicio,
+        fecha_fin: this.work.fecha_fin,
+        description: this.work.description,
+        titulo: this.work.titulo
     })
+    }
+    
   }
   ocultar(){
     this.exp_edit.emit(false)
   }
 
-  send(){
+  sendEditar(){
+    this.formGroup.value.id = this.work.id
     console.log(this.formGroup.value)
     this.apiServ.actualizarExperiencia(this.formGroup.value).subscribe(res=>{
-      this.newWork.emit(this.formGroup.value)
+      this.apiServ.actualUser.emit()
       this.exp_edit.emit(false)
+    })
+  }
+
+  sendCrear(){
+    this.apiServ.crearExperiencia(this.formGroup.value).subscribe(res=>{
+      this.apiServ.actualUser.emit()
+      this.exp_edit.emit()
     })
   }
 }

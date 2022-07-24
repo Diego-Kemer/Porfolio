@@ -1,5 +1,6 @@
 <div class="container">
-    <h2>Works</h2>
+    <h2>Works <i (click)="open()" class="icofont-plus"></i></h2>
+    <app-form-proyecto *ngIf="crear" [user]="user" (apaga)="apaga()"></app-form-proyecto>
     <div class="works">
         <app-item-work *ngFor="let item of user?.proyectos" [proyecto]="item" [user]="user"></app-item-work>
         <app-work-carousel></app-work-carousel>

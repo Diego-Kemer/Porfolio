@@ -24,7 +24,7 @@ export class FormProyectoComponent implements OnInit {
 
   ngOnInit(): void {
     this.formProy = this.formB.group({
-      id: this.proyecto.id,
+      id: Number,
       descrption: '', 
       foto_dos: this.imgage3,
       foto_portada: this.imgage1,
@@ -33,13 +33,16 @@ export class FormProyectoComponent implements OnInit {
       usuario: this.user
     })
 
-    this.formProy.patchValue({
-      descrption: this.proyecto.descrption, 
-      foto_dos: this.proyecto.foto_dos,
-      foto_portada: this.proyecto.foto_portada,
-      foto_uno: this.proyecto.foto_uno,
-      name: this.proyecto.name
-    })
+    if(this.proyecto){
+      this.formProy.patchValue({
+        descrption: this.proyecto.descrption, 
+        foto_dos: this.proyecto.foto_dos,
+        foto_portada: this.proyecto.foto_portada,
+        foto_uno: this.proyecto.foto_uno,
+        name: this.proyecto.name
+      })
+    }
+    
   }
 
 
@@ -71,9 +74,23 @@ export class FormProyectoComponent implements OnInit {
     this.apaga.emit()
   }
 
-  send(){
+  sendEdit(){
+    this.formProy.value.foto_dos = this.imgage3;
+    this.formProy.value.foto_portada = this.imgage1;
+    this.formProy.value.foto_uno = this.imgage2;
+    this.formProy.value.id = this.proyecto.id
     console.log(this.formProy.value)
     this.apiServ.actualizarProyecto(this.formProy.value).subscribe(res=>{
+      this.apiServ.actualUser.emit()
+      this.apagar()
+    })
+  }
+
+  sendCrear(){
+    this.formProy.value.foto_dos = this.imgage3;
+    this.formProy.value.foto_portada = this.imgage1;
+    this.formProy.value.foto_uno = this.imgage2;
+    this.apiServ.crearProyecto(this.formProy.value).subscribe(res=>{
       this.apiServ.actualUser.emit()
       this.apagar()
     })

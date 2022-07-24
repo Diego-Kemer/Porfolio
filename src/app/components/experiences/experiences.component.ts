@@ -9,9 +9,16 @@ import { IUser } from 'src/app/interfaces/iuser';
 })
 export class ExperiencesComponent implements OnInit {
   @Input() user!: IUser;
+  editar: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  open(){
+    this.editar = true;
+  }
+  oculta(){
+    this.editar = false;
+  }
 }

@@ -29,7 +29,7 @@ export class FormEducationComponent implements OnInit {
       this.instituciones = res
     })
     this.formGroup = this.fBuild.group({
-      id: this.data.id,
+      id: Number,
       titulo: '',
       institucion: {},
       fecha_inicio: '',
@@ -44,13 +44,16 @@ export class FormEducationComponent implements OnInit {
       logo: ''
     })
 
-    this.formGroup.patchValue({
-      titulo: this.data.titulo,
-      institucion: this.data.institucion,
-      fecha_inicio: this.data.fecha_inicio,
-      fecha_fin: this.data.fecha_fin,
-      modalidad: this.data.modalidad
+    if(this.data){
+      this.formGroup.patchValue({
+        titulo: this.data.titulo,
+        institucion: this.data.institucion,
+        fecha_inicio: this.data.fecha_inicio,
+        fecha_fin: this.data.fecha_fin,
+        modalidad: this.data.modalidad
     })
+    }
+    
   }
 
   ocultar(){
@@ -60,12 +63,27 @@ export class FormEducationComponent implements OnInit {
     this.institucionSelect = JSON.parse(item.target.value) 
   }
 
-  send(){
+  sendEdit(){
     if(this.institucionSelect){
       this.formGroup.value.institucion = this.institucionSelect
     }
+    this.formGroup.value.id = this.data.id
     this.apiServ.actualizarEstudio(this.formGroup.value).subscribe(res=>{
       this.apiServ.actualUser.emit()
+    })
+  }
+
+  sendCrear(){
+    
+    if(!this.institucionSelect){
+      this.formGroup.value.institucion = this.instituciones[0]
+    }else{
+      this.formGroup.value.institucion = this.institucionSelect
+    }
+    console.log(this.formGroup.value)
+    this.apiServ.crearEstudio(this.formGroup.value).subscribe(res=>{
+      this.apiServ.actualUser.emit()
+      this.cerrar.emit()
     })
   }
 

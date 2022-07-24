@@ -1,6 +1,12 @@
 <div class="grande" >
     <button class="boton" (click)="apagar()"><i class="icofont-close"></i></button>
-    <button class="boton save" (click)="send()"><i class="icofont-save"></i></button>
+    <div *ngIf="proyecto">
+        <button class="boton save" (click)="sendEdit()"><i class="icofont-save"></i></button>
+    </div>
+    <div *ngIf="!proyecto">
+        <button class="boton save" (click)="sendCrear()"><i class="icofont-save"></i></button>
+    </div>
+    
         <div class="carousel" [formGroup]="formProy">
             <div class="img">
                 <div class="contImg">
@@ -26,11 +32,11 @@
                 <div class="text">
                     <div class="block-titulo">
                         <label for="titulo">Titulo:</label>
-                        <input formControlName="name" value="{{proyecto.name}}" type="text" id="titulo">
+                        <input formControlName="name" type="text" id="titulo">
                     </div>
                     <div class="block-description">
                         <label for="description">Descrption:</label>
-                        <textarea formControlName="descrption" value="{{proyecto.descrption}}" name="description" id="description" cols="30"></textarea>
+                        <textarea formControlName="descrption" name="description" id="description" cols="30"></textarea>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@ import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 export class WorksComponent implements OnInit {
   @Input() user!: IUser;
   edit: boolean = false;
+  crear: boolean = false;
   proyecto!: IProyecto;
   constructor(private uiServ: UiServiceService) { }
 
@@ -23,6 +24,12 @@ export class WorksComponent implements OnInit {
 
   off(){
     this.edit = false
+  }
+  apaga(){
+    this.crear = false
+  }
+  open(){
+    this.crear = true;
   }
   
 

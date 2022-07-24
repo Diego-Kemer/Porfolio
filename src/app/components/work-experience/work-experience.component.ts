@@ -24,9 +24,4 @@ export class WorkExperienceComponent implements OnInit {
   oculta(){
     this.exp_edit = false
   }
-
-  actualiza(work: ITrabajo){
-    this.work = work;
-  }
-
 }

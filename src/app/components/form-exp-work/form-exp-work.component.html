@@ -1,7 +1,12 @@
 
  <div class="container"  [formGroup]="formGroup">
     <button class="edit" title="Cancelar" (click)="ocultar()"><i class="icofont-close"></i></button>
-    <button class="edit save" title="Guardar" (click)="send()"><i class="icofont-save"></i></button>
+    <div *ngIf="work">
+        <button class="edit save" title="Guardar" (click)="sendEditar()"><i class="icofont-save"></i></button>
+    </div>
+    <div *ngIf="!work">
+        <button class="edit save" title="Guardar" (click)="sendCrear()"><i class="icofont-save"></i></button>
+    </div>
 
     <h3>Editar experiencia laboral</h3>
     <div class="lista">

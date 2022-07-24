@@ -1,5 +1,5 @@
 <div class="container" *ngIf="!editar">
-    <img src="assets/img/deadpool_PNG3.png" alt="">
+    <img src="{{data?.institucion?.logo}}" alt="">
     <button (click)="mostrar()" class="contacto"><i class="icofont-edit-alt"></i></button>
     <h3>{{data?.titulo}}</h3>
     <div class="lista">

@@ -10,12 +10,20 @@ import { ApiService } from 'src/app/services/api/api.service';
 })
 export class EducationComponent implements OnInit{
   @Input() user!: IUser;
+  editar: boolean = false;
   public estudiosUser!: Array<IEstudio>;
   constructor(private serApi: ApiService) { }
 
   ngOnInit(): void {
     
     
+  }
+  open(){
+    this.editar = true;
+  }
+
+  cierre(){
+    this.editar = false;
   }
 
   
