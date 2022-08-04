@@ -5,8 +5,9 @@
             <h4>ArgentinaPrograma</h4>
         </div>
         <div class="botones">
-            <button title="Editar usuario" *ngIf="!login" routerLink="/home/admin"><i class="icofont-tools"></i></button>
-            <button title="Ir al home" *ngIf="login" routerLink="/home"><i class="icofont-home"></i></button>
+            <button title="Editar usuario" *ngIf="login" (click)="navegar()" routerLink="/home/admin"><i class="icofont-tools"></i></button>
+            <button title="Ir al home" *ngIf="!login" (click)="navegarAlHome()" routerLink="/home/"><i class="icofont-home"></i></button>
+            <button title="Salir del modo editar" *ngIf="!login && hayCookie" (click)="salir()">Cerrar</button>
         </div>
     </div>
     <hr>

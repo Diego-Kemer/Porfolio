@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
   login(){
     console.log(this.formLogin.value)
     this.apiServ.login(this.formLogin.value).subscribe(res=>{
-      console.log(res)
       if(res.token){
         this.cookieService.set('diego-porfolio', res.token)
         this.rute.navigate(['/home/admin'])

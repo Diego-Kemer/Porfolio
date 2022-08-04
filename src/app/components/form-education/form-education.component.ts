@@ -80,7 +80,6 @@ export class FormEducationComponent implements OnInit {
     }else{
       this.formGroup.value.institucion = this.institucionSelect
     }
-    console.log(this.formGroup.value)
     this.apiServ.crearEstudio(this.formGroup.value).subscribe(res=>{
       this.apiServ.actualUser.emit()
       this.cerrar.emit()
@@ -96,12 +95,10 @@ export class FormEducationComponent implements OnInit {
 
 
   sendIns(){
-    console.log(this.form2.value)
     if(this.logo){
       this.form2.value.logo = this.logo
     }
     this.apiServ.crearInstitucion(this.form2.value).subscribe(res=>{
-      console.log(res)
       this.apiServ.traerInstituciones().subscribe(res=>{
         this.instituciones = res;
         this.cancelar()
@@ -115,7 +112,6 @@ export class FormEducationComponent implements OnInit {
     const imgRef = ref(this.storage, `images/${file.name}`)
     uploadBytes(imgRef, file)
     .then(async resp=>{
-      console.log(resp)
       const url = await getDownloadURL(resp.ref)
       this.logo = url;
       this.form2.value.logo = this.logo;

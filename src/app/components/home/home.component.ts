@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
   traerUsuario(){
     this.servApi.traerUsuario().subscribe(res=>{
       this.user = res;
-      console.log(this.user)
     })
   }
 

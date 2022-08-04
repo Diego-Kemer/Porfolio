@@ -29,7 +29,6 @@ export class AboutComponent implements OnInit {
 
   noEditar(){
     this.editarAbout = false;
-    console.log('ok')
   }
 
 }

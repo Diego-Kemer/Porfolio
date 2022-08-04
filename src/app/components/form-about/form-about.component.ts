@@ -49,7 +49,6 @@ export class FormAboutComponent implements OnInit {
     const imgRef = ref(this.storage, `images/${file.name}`)
     uploadBytes(imgRef, file)
     .then(async resp=>{
-      console.log(resp)
       const url = await getDownloadURL(resp.ref)
       this.image = url;
       this.formAbout.value.foto_portada = this.image;
@@ -62,7 +61,6 @@ export class FormAboutComponent implements OnInit {
   }
 
   send() {
-    console.log(this.formAbout.value)
     this.apiServ.actualizarUser(this.formAbout.value).subscribe(res=>{
       this.apiServ.actualUser.emit()
       this.cierre.emit()

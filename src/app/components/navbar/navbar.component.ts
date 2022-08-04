@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,17 +9,39 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public login!: boolean;
+  public login: boolean = false;
+  public hayCookie: boolean = false;
 
-  constructor(private rute: Router) { }
+  constructor(private rute: Router,
+              private cookieService: CookieService,
+              private uiServ: UiServiceService) {
+     
+               }
 
   ngOnInit(): void {
-    if(this.rute.url == '/login'){
-      this.login = true
-    }else{
-      this.login = false
-    }
+    this.uiServ.hayCookie$.subscribe(res=>{
+      this.hayCookie = res
+    })
+
+    this.rute.events.subscribe((res: any)=>{
+      if(res.url == '/login'){
+        this.login = false
+      }
+      if(res.url == '/home'){
+        this.login = true
+      }
+    })
+  }
+  navegar(){
+    this.login = false
+  }
+  navegarAlHome(){
+    this.login = true
   }
 
-  
+  salir(){
+    this.cookieService.deleteAll('diego-porfolio')
+    this.uiServ.hayCookie$.next(false)
+    this.rute.navigate(['/home'])
+  }
 }

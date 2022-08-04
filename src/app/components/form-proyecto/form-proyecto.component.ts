@@ -59,7 +59,6 @@ export class FormProyectoComponent implements OnInit {
     const imgRef = ref(this.storage, `images/proyectos/${file.name}`)
     uploadBytes(imgRef, file)
     .then(async resp=>{
-      console.log(resp)
       const url = await getDownloadURL(resp.ref)
       if(atr == 1){
         this.imgage1 = url
@@ -86,7 +85,6 @@ export class FormProyectoComponent implements OnInit {
     this.formProy.value.foto_portada = this.imgage1;
     this.formProy.value.foto_uno = this.imgage2;
     this.formProy.value.id = this.proyecto.id
-    console.log(this.formProy.value)
     this.apiServ.actualizarProyecto(this.formProy.value).subscribe(res=>{
       this.apiServ.actualUser.emit()
       this.apagar()

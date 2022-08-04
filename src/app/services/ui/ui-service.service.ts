@@ -11,6 +11,7 @@ export class UiServiceService {
   @Output() editamos: EventEmitter<any> = new EventEmitter()
   encender$ = new Subject<boolean>();
   isLoading$ = new Subject<boolean>();
+  hayCookie$ = new Subject<boolean>();
   ruteEdit: boolean = false;
   public reciboArray: Array<any> = []
   
