@@ -9,7 +9,7 @@ import { UiServiceService } from 'src/app/services/ui/ui-service.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public login: boolean = false;
+  public login: boolean = true;
   public hayCookie: boolean = false;
 
   constructor(private rute: Router,
