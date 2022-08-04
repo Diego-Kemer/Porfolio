@@ -30,16 +30,23 @@ export class FormProyectoComponent implements OnInit {
       foto_portada: this.imgage1,
       foto_uno: this.imgage2,
       name: '',
-      usuario: this.user
+      usuario: this.user,
+      url: '',
+      git_hub: ''
     })
 
     if(this.proyecto){
+      this.imgage3 = this.proyecto.foto_dos;
+      this.imgage1 = this.proyecto.foto_portada;
+      this.imgage2 = this.proyecto.foto_uno;
       this.formProy.patchValue({
         descrption: this.proyecto.descrption, 
         foto_dos: this.proyecto.foto_dos,
         foto_portada: this.proyecto.foto_portada,
         foto_uno: this.proyecto.foto_uno,
-        name: this.proyecto.name
+        name: this.proyecto.name,
+        url: this.proyecto.url,
+      git_hub: this.proyecto.git_hub
       })
     }
     

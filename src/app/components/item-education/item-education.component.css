@@ -11,7 +11,7 @@
 .container .lista{
     margin: 20px;
 }
-.container i{
+.container i.icofont-book{
     position: absolute;
     right: -11px;
     top: 40%;
@@ -29,13 +29,58 @@
     position: absolute;
     right: 40px;
     top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.container .contacto button{
+    background: transparent;
     font-size: 30px;
     cursor: pointer;
+    margin-top: 10px;
     color: #fff;
     border: none;
     outline: none;
     transition: all .5s ease-in-out;
 }
-.contacto:hover{
+.contacto button:hover{
     transform: scale(1.2);
+}
+
+/* Responsive ancho */
+@media (max-width: 1280px){
+    .container{
+        font-size: 18px;
+    }
+}
+@media (max-width: 900px){
+    .container{
+        font-size: 16px;
+    }
+    .container .contacto{
+        position: absolute;
+        right: 20px;
+    }
+    .container .contacto button{
+        font-size: 20px;
+    }
+    
+}
+@media (max-width: 600px) {
+    .container{
+        font-size: 14px;
+        padding-left: 10px;
+        margin-right: 10px;
+        border: none;
+    }
+    .container img{
+        width: 40px;
+        height: 40px;
+        top: -30px;
+    }
+    .container .contacto button{
+        font-size: 16px;
+    }
+    .container i.icofont-book{
+        display: none;
+    }
 }

@@ -1,0 +1,17 @@
+<div class="contenedor">
+    <div class="form" [formGroup]="formLogin">
+        <h1>Login</h1>
+        <div class="block">
+            <h4>Usuario</h4>
+            <input formControlName="userName" type="text">
+        </div>
+        <div class="block">
+            <h4>Conraseña</h4>
+            <input formControlName="password" type="password">
+        </div>
+        <div class="block">
+            <button (click)="login()">Acceder</button>
+        </div>
+    </div>
+</div>
+<app-loading *ngIf="isLoading |async"></app-loading>

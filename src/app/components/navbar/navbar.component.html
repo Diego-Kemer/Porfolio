@@ -1,11 +1,12 @@
 <div class="nav">
     <div class="contenido">
         <div class="logo">
-            <img src="" alt="">
+            <img src="assets/img/logo-inti-arg-blanco.png" alt="">
             <h4>ArgentinaPrograma</h4>
         </div>
         <div class="botones">
-            <button><i class="icofont-navigation-menu"></i></button>
+            <button title="Editar usuario" *ngIf="!login" routerLink="/home/admin"><i class="icofont-tools"></i></button>
+            <button title="Ir al home" *ngIf="login" routerLink="/home"><i class="icofont-home"></i></button>
         </div>
     </div>
     <hr>

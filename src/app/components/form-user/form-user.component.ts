@@ -18,7 +18,7 @@ export class FormUserComponent implements OnInit {
   public formG!: FormGroup;
   ngOnInit(): void {
     this.formG = this.formB.group({
-      idusuario: 2,
+      idusuario: this.user.idusuario,
       name: '',
       lastname: '',
       profesion: '',
@@ -45,6 +45,7 @@ export class FormUserComponent implements OnInit {
   }
 
   send():void{
+    console.log(this.formG.value)
     this.apiServ.actualizarUser(this.formG.value).subscribe(res=>{
       this.apiServ.actualUser.emit()
       this.uiServ.hidden()

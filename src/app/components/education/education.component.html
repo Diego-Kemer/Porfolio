@@ -1,7 +1,9 @@
 <div class="contenedor">
     <div class="container">
-        <h2>Formación académica <i (click)="open()" class="icofont-plus"></i></h2>
-        <app-form-education *ngIf="editar"  [user]="user" (cerrar)="cierre()"></app-form-education>
+        <h2>Formación académica <i (click)="open()" class="icofont-plus" *ngIf="ruteEdit"></i></h2>
+        <app-form-education *ngIf="editar"  [user]="user" (cerrar)="cierre()">
+            <h3 titulo>Agregar estudio</h3>
+        </app-form-education>
         <div class="items">
             <app-item-education *ngFor="let item of user?.estudios" [data]="item" [user]="user"></app-item-education>
         </div>

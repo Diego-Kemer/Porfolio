@@ -8,7 +8,7 @@
         <button class="edit save" title="Guardar" (click)="sendCrear()"><i class="icofont-save"></i></button>
     </div>
 
-    <h3>Editar experiencia laboral</h3>
+    <ng-content select="[titulo]"></ng-content>
     <div class="lista">
         <li>Título: <input formControlName="titulo" id="name" type="text"></li>
         <li>Fecha de inicio: <input formControlName="fecha_inicio" type="date"></li>

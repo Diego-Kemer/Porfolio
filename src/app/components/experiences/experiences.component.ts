@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ITrabajo } from 'src/app/interfaces/itrabajo';
 import { IUser } from 'src/app/interfaces/iuser';
+import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
   selector: 'app-experiences',
@@ -10,9 +11,11 @@ import { IUser } from 'src/app/interfaces/iuser';
 export class ExperiencesComponent implements OnInit {
   @Input() user!: IUser;
   editar: boolean = false;
-  constructor() { }
+  ruteEdit!: boolean;
+  constructor(private uiServ: UiServiceService) { }
 
   ngOnInit(): void {
+    this.ruteEdit = this.uiServ.ruteEdit
   }
 
   open(){

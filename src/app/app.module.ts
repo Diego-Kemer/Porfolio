@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +27,11 @@ import { FormAboutComponent } from './components/form-about/form-about.component
 import { FormEducationComponent } from './components/form-education/form-education.component';
 import { WorkCarouselComponent } from './components/work-carousel/work-carousel.component';
 import { FormProyectoComponent } from './components/form-proyecto/form-proyecto.component';
+import { LoadingComponent } from './components/loading/loading.component';
+import { InterceptarHttpInterceptor } from './interceptores/interceptar-http.interceptor';
+import { LoginComponent } from './components/login/login.component';
+import { CookieService } from 'ngx-cookie-service';
+import { AuthInterceptor } from './interceptores/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -49,7 +54,9 @@ import { FormProyectoComponent } from './components/form-proyecto/form-proyecto.
     FormAboutComponent,
     FormEducationComponent,
     WorkCarouselComponent,
-    FormProyectoComponent
+    FormProyectoComponent,
+    LoadingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,7 @@ import { FormProyectoComponent } from './components/form-proyecto/form-proyecto.
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage())
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptarHttpInterceptor, multi: true}, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

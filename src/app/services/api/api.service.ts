@@ -18,7 +18,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
   //Para datos del usuario
   traerUsuario(): Observable<IUser>{
-    return this.http.get<IUser>(`${this.url}/usuario/2`)
+    return this.http.get<IUser>(`${this.url}/auth/usuario/1`)
   }
 
   actualizarUser(user: IUser): Observable<void>{
@@ -34,9 +34,13 @@ export class ApiService {
     return this.http.post<any>(`${this.url}/trabajo`, work)
   }
 
+  eliminarExperiencia(exp: ITrabajo): Observable<any>{
+    return this.http.delete<any>(`${this.url}/trabajo/${exp.id}`)
+  }
+
   //Para las instituciones
   traerInstituciones(): Observable<Array<IInstitucion>>{
-    return this.http.get<Array<IInstitucion>>(`${this.url}/instituciones`)
+    return this.http.get<Array<IInstitucion>>(`${this.url}/auth/instituciones`)
   }
 
   crearInstitucion(inst: IInstitucion): Observable<any>{
@@ -50,6 +54,9 @@ export class ApiService {
   actualizarEstudio(est: IEstudio): Observable<any>{
     return this.http.put<any>(`${this.url}/estudio`, est)
   }
+  eliminarEstudio(est: IEstudio): Observable<any>{
+    return this.http.delete<any>(`${this.url}/estudio/${est.id}`)
+  }
 
   //Para los proyectos
   actualizarProyecto(proy: IProyecto): Observable<any>{
@@ -58,5 +65,14 @@ export class ApiService {
 
   crearProyecto(proy: IProyecto): Observable<any>{
     return this.http.post<any>(`${this.url}/proyecto`, proy)
+  }
+
+  eliminarProyecto(proy: IProyecto): Observable<any>{
+    return this.http.delete<any>(`${this.url}/proyecto/${proy.id}`)
+  }
+
+  //Para ingresar
+  login(log: any): Observable<any>{
+    return this.http.post<any>(`${this.url}/auth/login`, log)
   }
 }

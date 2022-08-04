@@ -101,6 +101,7 @@ export class FormEducationComponent implements OnInit {
       this.form2.value.logo = this.logo
     }
     this.apiServ.crearInstitucion(this.form2.value).subscribe(res=>{
+      console.log(res)
       this.apiServ.traerInstituciones().subscribe(res=>{
         this.instituciones = res;
         this.cancelar()

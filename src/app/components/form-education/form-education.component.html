@@ -1,6 +1,6 @@
 <div class="container">
     <div [formGroup]="formGroup">
-        <h3>Editar datos</h3>
+        <ng-content select="[titulo]"></ng-content>
         <div class="lista">
             <li>Título: <input formControlName="titulo" type="text"></li>
             <li>Institución: <select name="inst" id="inst" (change)="ver($event)">

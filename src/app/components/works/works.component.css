@@ -20,3 +20,15 @@
     align-content: center;
     background: var(--prim);
 }
+
+/* Responsive ancho */
+@media (max-width: 790px){
+    .container .works{
+        width: 80%;
+    }
+}
+@media (max-width: 400px){
+    .container .works{
+        width: 90%;
+    }
+}

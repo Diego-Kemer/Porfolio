@@ -79,11 +79,31 @@
 
 .edit{
     position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.edit button{
     color: #fff;
     background: #000;
     padding: 10px;
     border: none;
     cursor: pointer;
-    top: 10px;
-    right: 10px;
+    margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+    .container{
+        width: 200px;
+        height: 250px;
+    }
+    .container .work .acces h3{
+        top: 0px;
+        font-size: 14px;
+    }
+    .container .work .acces .links .icons i{
+        font-size: 16;
+    }
+    
 }

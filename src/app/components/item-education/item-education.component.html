@@ -1,6 +1,10 @@
 <div class="container" *ngIf="!editar">
     <img src="{{data?.institucion?.logo}}" alt="">
-    <button (click)="mostrar()" class="contacto"><i class="icofont-edit-alt"></i></button>
+    <div class="contacto" *ngIf="ruteEdit">
+        <button (click)="mostrar()"><i class="icofont-edit-alt"></i></button>
+        <button (click)="eliminar()"><i class="icofont-ui-delete"></i></button>
+    </div>
+    
     <h3>{{data?.titulo}}</h3>
     <div class="lista">
         <li><b>Institución:</b> {{data?.institucion?.name}}</li>
@@ -12,4 +16,6 @@
     </div>
     <i class="icofont-book"></i>
 </div>
-<app-form-education *ngIf="editar" [data]="data" [user]="user" (cerrar)="oculta()"></app-form-education>
+<app-form-education *ngIf="editar" [data]="data" [user]="user" (cerrar)="oculta()">
+    <h3 titulo>Editar datos</h3>
+</app-form-education>

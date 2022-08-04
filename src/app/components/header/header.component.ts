@@ -10,10 +10,12 @@ import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 export class HeaderComponent implements OnInit {
   @Input() user!: IUser;
   public editar = this.uiServ.encender$;
+  public ruteEdit!: boolean;
 
   constructor( private uiServ: UiServiceService) { }
 
   ngOnInit(): void {
+    this.ruteEdit = this.uiServ.ruteEdit
   }
   mostrar():void{
     this.uiServ.show()

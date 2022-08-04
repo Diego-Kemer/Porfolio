@@ -14,7 +14,8 @@ export const environment = {
     measurementId: 'G-7VL6XY9CGD',
   },
   production: false,
-  api: 'http://localhost:8080'
+  //api: 'http://localhost:8080'
+  api: 'https://porfolio-web-diego.herokuapp.com'
 };
 
 /*

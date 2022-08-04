@@ -1,5 +1,9 @@
 <div class="container">
-    <button (click)="editar(proyecto)" class="edit"><i class="icofont-edit-alt"></i></button>
+    <div class="edit" *ngIf="ruteEdit">
+        <button (click)="editar(proyecto)"><i class="icofont-edit-alt"></i></button>
+        <button (click)="eliminar()"><i class="icofont-ui-delete"></i></button>
+    </div>
+
     <div class="work">
         <div class="img">
             <img src="{{proyecto?.foto_portada}}" alt="">
@@ -10,7 +14,8 @@
             <div class="links">
                 <hr>
                 <div class="icons">
-                    <a title="Ver web" target="_blank" href="{{proyecto?.url}}"><i class="icofont-dashboard-web"></i></a>
+                    <a title="Ver web" target="_blank" href="{{proyecto?.url}}"><i
+                            class="icofont-dashboard-web"></i></a>
                     <a title="Ver Github" target="_blank" href="{{proyecto?.git_hub}}"><i class="icofont-code"></i></a>
                 </div>
             </div>

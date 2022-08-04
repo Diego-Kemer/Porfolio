@@ -1,7 +1,7 @@
-.grande{
+ .grande{
     position: absolute;
     background: rgba(29, 29, 28, 0.589);
-    width: 60%;
+    width: 80%;
     left: 0;
     top: 0;
     bottom: 0;
@@ -30,7 +30,7 @@
     top: 70px;
 }
 .carousel{
-    width: 70%;
+    width: 80%;
     margin: 20px auto;
     position: relative;
 }
@@ -42,7 +42,8 @@
                 -2px -2px 20px rgba(48, 45, 45, 0.822);
     z-index: 2;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 40% 60%;
+    height: 100%;
 }
 .grande .img .contImg{
     display: flex;
@@ -107,6 +108,7 @@
     filter: invert();
     padding: 10px;
     font-size: 20px;
+    width: max-content;
 }
 
 .grande .text .block-titulo label,
@@ -141,4 +143,4 @@
         right: 10px;
     }
     
-}
+} 

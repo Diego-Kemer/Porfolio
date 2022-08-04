@@ -12,6 +12,7 @@ export class WorksComponent implements OnInit {
   @Input() user!: IUser;
   edit: boolean = false;
   crear: boolean = false;
+  ruteEdit!: boolean;
   proyecto!: IProyecto;
   constructor(private uiServ: UiServiceService) { }
 
@@ -20,6 +21,7 @@ export class WorksComponent implements OnInit {
       this.proyecto = res;
       this.edit = true
     })
+    this.ruteEdit = this.uiServ.ruteEdit
   }
 
   off(){

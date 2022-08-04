@@ -11,3 +11,22 @@
     font-size: 20px;
     margin: auto;
 }
+
+
+/* Responsive ancho */
+@media (max-width: 1280px){
+    .container{
+        font-size: 18px;
+        width: 80%;
+    }
+}
+@media (max-width: 790px){
+    .container{
+        font-size: 16px;
+    }
+}
+@media (max-width: 400px){
+    .container{
+        font-size: 14px;
+    }
+}

@@ -1,6 +1,6 @@
 <div class="conteiner">
     <div class="contenedor" *ngIf="!editarAbout">
-        <button (click)="editar()" class="edit"><i class="icofont-edit-alt"></i></button>
+        <button (click)="editar()" class="edit" *ngIf="ruteEdit"><i class="icofont-edit-alt"></i></button>
         <img src={{usuario?.foto_portada}} alt="Diego Kemer">
         <p>{{usuario?.sobre_mi}}
         </p>

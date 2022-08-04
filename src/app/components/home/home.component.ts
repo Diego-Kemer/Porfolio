@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
+import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,12 @@ import { ApiService } from 'src/app/services/api/api.service';
 })
 export class HomeComponent implements OnInit {
   public user: any;
+  public isLoading: any;
 
-  constructor(private servApi: ApiService) { }
+  constructor(private servApi: ApiService,
+              private uiServ: UiServiceService) { 
+                this.isLoading = this.uiServ.isLoading$
+              }
 
   ngOnInit(): void {
     this.traerUsuario()
@@ -17,6 +22,7 @@ export class HomeComponent implements OnInit {
     this.servApi.actualUser.subscribe(res=>{
       this.traerUsuario()
     })
+    this.uiServ.revisar()
   }
   traerUsuario(){
     this.servApi.traerUsuario().subscribe(res=>{

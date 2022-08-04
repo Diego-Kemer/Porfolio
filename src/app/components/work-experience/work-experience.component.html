@@ -1,5 +1,9 @@
 <div class="container" *ngIf="!exp_edit">
-    <button (click)="mostrar()" title="Editar" class="contacto"><i class="icofont-edit-alt"></i></button>
+    <div class="contacto" *ngIf="ruteEdit">
+        <button (click)="mostrar()" title="Editar"><i class="icofont-edit-alt"></i></button>
+        <button (click)="eliminar()"><i class="icofont-ui-delete"></i></button>
+    </div>
+
     <h3>{{work?.titulo}}</h3>
     <div class="lista">
         <li>Puesto: {{work?.titulo}}</li>
@@ -9,4 +13,6 @@
     </div>
     <i class="icofont-briefcase"></i>
 </div>
-<app-form-exp-work *ngIf="exp_edit" [usuario]="user"  [work]="work" (exp_edit)="oculta()"></app-form-exp-work>
+<app-form-exp-work *ngIf="exp_edit" [usuario]="user" [work]="work" (exp_edit)="oculta()">
+    <h3 titulo>Editar experiencia laboral</h3>
+</app-form-exp-work>

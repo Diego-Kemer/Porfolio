@@ -109,3 +109,16 @@
     color: #888;
     margin-top: 5px;
 }
+
+@media  (max-width: 380px){
+    .skill{
+        width: 170px;
+        height: 170px;
+    }
+}
+@media  (max-width: 300px){
+    .skill{
+        width: 140px;
+        height: 140px;
+    }
+}

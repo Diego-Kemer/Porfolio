@@ -11,6 +11,8 @@
     width: 80%;
     display: flex;
     justify-content: space-around;
+    height: max-content;
+
 }
 
 .contenido .texto{
@@ -19,7 +21,9 @@
     width: 40%;
     animation: izquierda 2s;
     position: relative;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 @keyframes izquierda {
     0%{transform: translateX(-100%); opacity: 0;}
@@ -30,20 +34,22 @@
     margin: 10px 0px;
     font-size: 70px;
 }
-.contenido .texto button{
+.contenido .texto a{
     margin: 20px 0px;
     padding: 20px 50px 20px 50px;
     font-size: 30px;
+    width: max-content;
     color: #fff;
     background: #000;
     border-radius: 232px;
     display: flex;
     align-items: center;
+    text-decoration: none;
     border: solid .5px #fff;
     box-shadow: 1px 1px 10px rgb(252, 145, 5, 0.2),
                 -1px -1px 10px rgba(252, 145, 5, 0.2);
 }
-.contenido .texto button i.icofont-arrow-right{
+.contenido .texto a i.icofont-arrow-right{
     margin-left: 20px;
     font-weight: lighter;
 }
@@ -51,6 +57,9 @@
     animation: derecha 2s;
     width: 30%;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .contenido .texto button.contacto{
     color: #fff;
@@ -109,4 +118,101 @@
     font-size: 20px;
     display: block;
     background-color: var(--prim);
+}
+
+/* Responsive ancho */
+@media (max-width: 1500px) {
+    .contenido .texto,
+    .contenido .texto button{
+        font-size: 20px;
+    }
+    .contenido .texto h1{
+        font-size: 40px;
+    }
+
+}
+@media (max-width: 1280px){
+    .contenido .texto,
+    .contenido .texto button{
+        font-size: 16px;
+    }
+    .contenido .texto h1{
+        font-size: 30px;
+    }
+    .contenido img{
+        width: 250px;
+        height: 250px;
+    }
+}
+@media (max-width: 790px){
+    .contenido .texto h1{
+        font-size: 20px;
+    }
+    .contenido .texto{
+        width: 75%;   
+    }
+    .contenido img{
+        width: 200px;
+        height: 200px;
+    }
+    .contenido .texto button.contacto{
+        margin: 0px;
+        padding: 0px;
+    }
+}
+@media (max-width: 700px) {
+    .contenedor{
+        height: 80vh;
+        position: relative;
+    }
+    .contenido .imgEIcons{
+        display: none;
+    }
+    .contenedor .redes .red .enlaces{
+        height: 40vh;
+    }
+    .contenedor .redes .red hr{
+        height: 40vh;
+    }
+    .contenido{
+       height: 50%; 
+    }
+}
+
+
+/* Responsive alto */
+@media (max-height: 790px){
+    .contenedor .contenido{
+        height: 65%;
+    }
+    .contenedor .redes .red a{
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 14px;
+    }
+}
+@media (max-height: 600px){
+    .contenedor .redes .red .enlaces,
+    .contenedor .redes .red hr{
+        height: 60vh;
+    }
+
+}
+@media (max-height: 400px){
+    .contenedor .contenido{
+        height: 60%;
+    }
+    .contenido .texto{
+        font-size: 16px;
+        width: 50%;
+    }
+    .contenedor .redes .red .enlaces,
+    .contenedor .redes .red hr{
+        height: 70vh;
+    }
+    .contenido img{
+        width: 200px;
+        height: 200px;
+    }
+
 }

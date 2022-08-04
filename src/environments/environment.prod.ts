@@ -10,5 +10,6 @@ export const environment = {
     measurementId: 'G-7VL6XY9CGD',
   },
   production: true,
-  api: 'localhost:8080'
+  //api: 'localhost:8080'
+  api: 'https://porfolio-web-diego.herokuapp.com'
 };

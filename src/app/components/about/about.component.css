@@ -43,3 +43,56 @@
 .edit:hover{
     transform: scale(1.2);
 }
+/* ---------------------- */
+
+/* Responsive ancho */
+
+@media (max-width: 1100px){
+    .conteiner .contenedor img{
+        width: 260px;
+        height: 260px;
+    }
+}
+@media (max-width: 900px){
+    .conteiner .contenedor p{
+        font-size: 18px;
+        padding: 15px;
+    }
+    
+}
+@media (max-width: 800px) {
+    .conteiner .contenedor img{
+        width: 200px;
+        height: 200px;
+    }
+    .conteiner .contenedor p{
+        font-size: 16px;
+        padding: 10px;
+        text-align: center;
+        width: 80%;
+    }
+}
+
+
+
+@media (max-width: 650px) {
+    .conteiner{
+        height: 60vh;
+    }
+    .conteiner .contenedor{
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .conteiner .contenedor img{
+        width: 150px;
+        height: 150px;
+        border-radius: 6px;
+    }
+    .conteiner .contenedor p{
+        font-size: 14px;
+    }
+    .edit{
+        font-size: 20px;
+    }
+    
+}
