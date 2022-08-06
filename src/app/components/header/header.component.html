@@ -1,18 +1,39 @@
 <div class="contenedor">
     <div class="contenido">
         <div class="texto">
+            <div class="nombre">
+                <h1>{{user?.name}} {{user?.lastname}}</h1>
+                <hr class="line1">
+                <hr class="line2">
+                <hr class="line3">
+            </div>
             <button (click)="mostrar()" class="contacto" *ngIf="ruteEdit"><i class="icofont-edit-alt"></i></button>
-            <h1>{{user?.name}} {{user?.lastname}}</h1>
-            <h3>{{user?.profesion}} {{user?.nivel}}</h3>
+            
             <ul>
+            <h3>{{user?.profesion}} - {{user?.nivel}}</h3>
                 <li><b>Edad:</b> {{user?.edad}}</li>
                 <li><b>Nacionalidad:</b> {{user?.nacionalidad}}</li>
             </ul>
             <a target="_blank" href="https://api.whatsapp.com/send?phone=543435341866&text=Hola,¡Me gustaría contactarte!">Contactar <i class="icofont-arrow-right"></i></a>
         </div>
         <div class="imgEIcons">
-            <img src="https://images.unsplash.com/photo-1534294228306-bd54eb9a7ba8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                alt="Louis Reed">
+            <img src="assets/img/escritorio2.png"
+                alt="">
+            <div class="effect">
+                <div class="cubo1"></div>
+                <div class="cubo2"></div>
+                <div class="cubo3"></div>
+                <div class="cubo4"></div>
+                <div class="cubo5"></div>
+                <div class="cubo6"></div>
+                <div class="cubo7"></div>
+                <div class="cubo8"></div>
+                <div class="cubo9"></div>
+                <div class="cubo10"></div>
+                <div class="cubo11"></div>
+                <div class="cubo12"></div>
+            </div>
+            <!-- <div class="tapar"></div> -->
         </div>
 
     </div>
@@ -20,11 +41,11 @@
         <div class="red">
             <hr>
             <div class="enlaces">
-                <a href=""><i class="icofont-instagram"></i></a>
+                <a href="https://www.instagram.com/kemerdiego/"><i class="icofont-instagram"></i></a>
                 <!-- <a href=""><i class="icofont-facebook"></i></a> -->
-                <a href=""><i class="icofont-code"></i></a>
-                <a href=""><i class="icofont-youtube-play"></i></a>
-                <a href=""><i class="icofont-linkedin"></i></a>
+                <a href="https://github.com/Diego-Kemer"><i class="icofont-code"></i></a>
+                <a href="https://www.youtube.com/channel/UChyWghOfbX6hl-Oky5t6jpw"><i class="icofont-youtube-play"></i></a>
+                <a href="https://www.linkedin.com/in/diego-kemer-desarrollador-web-junior-angular-242002222/"><i class="icofont-linkedin"></i></a>
             </div>
         </div>
 

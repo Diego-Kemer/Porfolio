@@ -46,7 +46,6 @@ export class FormExpWorkComponent implements OnInit {
 
   sendEditar(){
     this.formGroup.value.id = this.work.id
-    console.log(this.formGroup.value)
     this.apiServ.actualizarExperiencia(this.formGroup.value).subscribe(res=>{
       this.apiServ.actualUser.emit()
       this.exp_edit.emit(false)

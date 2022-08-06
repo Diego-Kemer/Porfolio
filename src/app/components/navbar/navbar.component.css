@@ -21,11 +21,23 @@
     align-items: center;
 }
 .contenido .botones button{
-    color: #fff;
-    background: transparent;
+    color: #000;
+    background: #fff;
     cursor: pointer;
     border: none;
     outline: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    box-shadow: 1px 1px 5px var(--seg),
+                -1px -1px 5px var(--seg);
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
+}
+.contenido .botones button:hover{
+    color: #fff;
+    background: #000;
+    box-shadow: 1px 1px 5px #fff,
+                -1px -1px 5px #fff;
 }
 .contenido .botones button i{
     font-size: 25px;
@@ -48,7 +60,6 @@ hr{
     align-items: center;
 }
 .logo img{
-    width: 50px;
-    height: 50px;
+    width: 80px;
     margin-right: 10px;
 }
