@@ -1,12 +1,12 @@
 <div class="container" #skill>
-    <div class="skill">
-        <div class="loading" style="--color:{{color}}; --num:{{num}}">
-            <div class="dot">
+    <div class="skill" #skillItem>
+        <div #loading class="loading" style="--color:{{color}}; --num:{{num}}">
+            <div class="dot" #punto>
 
             </div>
             <svg>
                 <circle cx="70" cy="70" r="70"></circle>
-                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" #circulo></circle>
             </svg>
             <div class="skill-data">
                 <h2>{{num}}<span>%</span></h2>

@@ -1,4 +1,4 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable, Output, EventEmitter, ElementRef, QueryList } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
@@ -43,5 +43,13 @@ export class UiServiceService {
 
   hidden():void{
     this.encender$.next(false)
+  }
+
+  subrayarScroll(elementos: QueryList<any>, animacion: string){
+    elementos.forEach(item=>{
+      if(item.nativeElement.offsetTop - 300 < document.documentElement.scrollTop){
+        item.nativeElement.style.animation = animacion
+      }
+    })
   }
 }

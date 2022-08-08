@@ -1,9 +1,26 @@
 <div class="conteiner">
+    
     <div class="contenedor" *ngIf="!editarAbout">
-        <button (click)="editar()" class="edit" *ngIf="ruteEdit"><i class="icofont-edit-alt"></i></button>
-        <img src={{usuario?.foto_portada}} alt="Diego Kemer">
-        <p>{{usuario?.sobre_mi}}
-        </p>
+        <div class="titulo">
+            <div>
+                <h2>Sobre mí</h2>
+                <hr #hr>
+                <hr #hr>
+            </div>
+            
+        </div>
+        
+        <div class="content">
+            <button (click)="editar()" class="edit" *ngIf="ruteEdit"><i class="icofont-edit-alt"></i></button>
+            <div class="imagen">
+                <img src={{usuario?.foto_portada}} alt="Diego Kemer">
+                <button>Descargar CV</button>
+            </div>
+            
+            <p>{{usuario?.sobre_mi}}
+            </p>
+        </div>
+        
     </div>
     <app-form-about *ngIf="editarAbout"  (cierre)="noEditar()" [user]="usuario"></app-form-about>
 </div>

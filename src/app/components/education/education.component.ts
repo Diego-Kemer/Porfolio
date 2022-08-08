@@ -1,20 +1,21 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 import { IEstudio } from 'src/app/interfaces/iestudio';
 import { IUser } from 'src/app/interfaces/iuser';
-import { ApiService } from 'src/app/services/api/api.service';
+import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 @Component({
   selector: 'app-education',
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })
-export class EducationComponent implements OnInit{
+export class EducationComponent implements OnInit, AfterViewInit{
   @Input() user!: IUser;
+  @ViewChildren('hr') elementos!: QueryList<any>;
   ruteEdit: boolean = false;
   editar!: boolean;
   public estudiosUser!: Array<IEstudio>;
-  constructor(private serApi: ApiService,
+  constructor(private uiServ: UiServiceService,
               private route: Router) { 
                 this.editar = false;
               }
@@ -28,6 +29,14 @@ export class EducationComponent implements OnInit{
     }
     
   }
+
+  ngAfterViewInit(): void {
+    window.addEventListener('scroll', ()=>{
+      this.uiServ.subrayarScroll(this.elementos, 'subrayar .5s linear forwards')
+    })
+    
+  }
+
   open(){
     this.editar = true;
   }

@@ -1,6 +1,11 @@
 <div class="contenedor">
     <div class="container">
-       <h2>Experiencia laboral <i (click)="open()" class="icofont-plus" *ngIf="ruteEdit"></i></h2> 
+        <div class="titulo">
+            <h2>Experiencia laboral <i (click)="open()" class="icofont-plus" *ngIf="ruteEdit"></i></h2> 
+            <hr #hr>
+            <hr #hr>
+        </div>
+       
        <app-form-exp-work *ngIf="editar" [usuario]="user" (exp_edit)="oculta()">
             <h3 titulo>Agregar experiencia laboral</h3>
        </app-form-exp-work>

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
+import { UiServiceService } from 'src/app/services/ui/ui-service.service';
 
 
 @Component({
@@ -7,11 +8,13 @@ import { Router } from '@angular/router';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent implements OnInit, AfterViewInit {
   @Input() usuario!: any;
+  @ViewChildren('hr') elementos!: QueryList<any>;
   editarAbout: boolean = false;
   ruteEdit: boolean = false;
-  constructor( private route: Router ) { }
+  constructor( private route: Router,
+                private uiServ: UiServiceService ) { }
 
   ngOnInit(): void {
     if(this.route.url == '/home/admin'){
@@ -20,6 +23,13 @@ export class AboutComponent implements OnInit {
     else{
       this.ruteEdit = false
     }
+    
+  }
+
+  ngAfterViewInit(): void {
+    window.addEventListener('scroll', ()=>{
+      this.uiServ.subrayarScroll(this.elementos, 'subrayar .5s linear forwards')
+    })
     
   }
 

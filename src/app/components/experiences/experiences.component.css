@@ -11,7 +11,23 @@
     font-size: 20px;
     margin: auto;
 }
-
+.contenedor .titulo{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+}
+.contenedor .titulo hr{
+    margin-bottom: 5px;
+    width: 0%;
+}
+.contenedor .titulo hr:nth-child(2){
+    border: solid 1px var(--seg);
+    align-self: flex-end;
+}
+@keyframes subrayar {
+    0%{width: 0%;}
+    100%{width: 90%;}
+}
 
 /* Responsive ancho */
 @media (max-width: 1280px){

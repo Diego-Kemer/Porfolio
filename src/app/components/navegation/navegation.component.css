@@ -1,6 +1,7 @@
 .container{
     position: sticky;
     top: 30%;
+    z-index: 5;
 }
 .redes{
     position: absolute;
