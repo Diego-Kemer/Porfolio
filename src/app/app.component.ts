@@ -1,7 +1,4 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { IUser } from './interfaces/iuser';
-import { ApiService } from './services/api/api.service';
 import { UiServiceService } from './services/ui/ui-service.service';
 
 @Component({

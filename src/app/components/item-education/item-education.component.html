@@ -7,12 +7,12 @@
     
     <h3>{{data?.titulo}}</h3>
     <div class="lista">
-        <li><b>Institución:</b> {{data?.institucion?.name}}</li>
-        <li><b>Localidad:</b> {{data?.institucion?.localidad}}</li>
-        <li><b>Provincia:</b> {{data?.institucion?.provincia}}</li>
-        <li><b>Fecha inicio:</b> {{data?.fecha_inicio}}</li>
-        <li><b>Fecha fin: </b>{{data?.fecha_fin}} </li>
-        <li><b>Modalidad:</b> {{data?.modalidad | titlecase}}</li>
+        <div><li></li><p><b>Institución:</b> {{data?.institucion?.name}}</p></div>
+        <div><li></li><p><b>Localidad:</b> {{data?.institucion?.localidad}}</p></div>
+        <div><li></li><p><b>Provincia:</b> {{data?.institucion?.provincia}}</p></div>
+        <div><li></li><p><b>Fecha inicio:</b> {{data?.fecha_inicio}}</p></div>
+        <div><li></li><p><b>Fecha fin: </b>{{data?.fecha_fin}}</p></div>
+        <div><li></li><p><b>Modalidad:</b> {{data?.modalidad | titlecase}}</p></div>
     </div>
     <i class="icofont-book"></i>
 </div>

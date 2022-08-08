@@ -1,7 +1,7 @@
 .grande{
     position: absolute;
     background: rgba(29, 29, 28, 0.589);
-    width: 80%;
+    width: 100%;
     left: 0;
     top: 0;
     bottom: 0;
@@ -96,9 +96,9 @@
     .grande{
         width: 100%;
     }
-    .grande .img{
+    /* .grande .img{
         grid-template-rows: 60vh;
-    }
+    } */
     .grande .text span{
         font-size: 20px;
     }

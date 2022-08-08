@@ -2,7 +2,7 @@
     color: #fff;
     margin: 50px 0px;
     font-size: 20px;
-    border-right: solid 1px #fff;
+    border-right: solid 1px var(--seg);
     padding-left: 50px;
     margin-right: 50px;
     position: relative;
@@ -10,6 +10,17 @@
 }
 .container .lista{
     margin: 20px;
+}
+.container .lista div{
+    display: flex;
+    flex-direction: row;
+}
+.container .lista li{
+    color: var(--seg);
+    filter: drop-shadow(0px 0px 10px var(--seg)) brightness(2);
+}
+.container .lista p{
+    color: #fff;
 }
 .container i.icofont-book{
     position: absolute;

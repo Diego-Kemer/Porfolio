@@ -3,6 +3,16 @@
     --prim: #0C0C0D;
     --seg: #811F83;
 }
+:root::-webkit-scrollbar{
+    width: 7px;
+}
+:root::-webkit-scrollbar-track{
+    background: var(--prim);
+}
+:root::-webkit-scrollbar-thumb{
+    background: var(--seg);
+    border-radius: 5px;
+}
 *{
     padding: 0px;
     margin: 0px;

@@ -6,10 +6,10 @@
 
     <h3>{{work?.titulo}}</h3>
     <div class="lista">
-        <li>Puesto: {{work?.titulo}}</li>
-        <li>Fecha inicio: {{work?.fecha_inicio | date}}</li>
-        <li>Fecha fin: {{work?.fecha_fin | date}}</li>
-        <li>Descripción: {{work?.description}}</li>
+        <div><li></li><p><b>Puesto:</b> {{work?.titulo}}</p></div>
+        <div><li></li><p><b>Fecha inicio:</b> {{work?.fecha_inicio | date}}</p></div>
+        <div><li></li><p><b>Fecha fin:</b> {{work?.fecha_fin | date}}</p></div>
+        <div><li></li><p><b>Descripción: </b>{{work?.description}}</p></div>
     </div>
     <i class="icofont-briefcase"></i>
 </div>
