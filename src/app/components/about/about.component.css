@@ -89,7 +89,9 @@
     color: #fff;
     font-size: 30px;
     cursor: pointer;
-    background: transparent;
+    background: #000;
+    border-radius: 5px;
+    padding: 10px;
     border: none;
     outline: none;
     transition: all .3s ease-in-out;
