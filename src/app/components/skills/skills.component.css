@@ -11,6 +11,33 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+.container .titulo{
+  margin: auto;
+  font-weight: bold;
+  width: 90%;
+}
+.container .titulo h2{
+  font-size: 30px;
+}
+.container .titulo hr{
+  margin-bottom: 5px;
+  width: 0%;
+}
+.container .titulo hr:nth-child(2){
+  border: solid 1px var(--seg);
+  align-self: flex-end;
+}
+@keyframes subrayar {
+  0%{width: 0%;}
+  100%{width: 90%;}
+}
+.container .titulo div{
+  width: max-content;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
 
 /* Responsive ancho */
 @media (max-width: 1020px) {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navegation',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navegation.component.css']
 })
 export class NavegationComponent implements OnInit {
-
+  @Output() navegar = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  emitirNavegacion(evento: string){
+    this.navegar.emit(evento)
+  }
 }

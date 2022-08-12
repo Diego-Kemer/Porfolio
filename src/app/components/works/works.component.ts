@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { IProyecto } from 'src/app/interfaces/iproyecto';
 import { IUser } from 'src/app/interfaces/iuser';
 import { UiServiceService } from 'src/app/services/ui/ui-service.service';
@@ -8,7 +8,8 @@ import { UiServiceService } from 'src/app/services/ui/ui-service.service';
   templateUrl: './works.component.html',
   styleUrls: ['./works.component.css']
 })
-export class WorksComponent implements OnInit {
+export class WorksComponent implements OnInit, AfterViewInit {
+  @ViewChildren('hr') elementos!: QueryList<any>;
   @Input() user!: IUser;
   edit: boolean = false;
   crear: boolean = false;
@@ -22,6 +23,12 @@ export class WorksComponent implements OnInit {
       this.edit = true
     })
     this.ruteEdit = this.uiServ.ruteEdit
+  }
+  ngAfterViewInit(): void {
+    window.addEventListener('scroll', ()=>{
+      this.uiServ.subrayarScroll(this.elementos, 'subrayar .5s linear forwards')
+    })
+    
   }
 
   off(){

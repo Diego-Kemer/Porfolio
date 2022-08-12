@@ -21,6 +21,33 @@
     align-content: center;
     background: var(--prim);
 }
+.container .titulo{
+    margin: 20px auto;
+    font-weight: bold;
+    width: 90%;
+}
+.container .titulo h2{
+    font-size: 30px;
+}
+.container .titulo hr{
+    margin-bottom: 5px;
+    width: 0px;
+}
+.container .titulo hr:nth-child(2){
+    border: solid 1px var(--seg);
+    align-self: flex-end;
+}
+@keyframes subrayar {
+    0%{width: 0%;}
+    100%{width: 90%;}
+}
+.container .titulo div{
+    width: max-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
 .container h2{
     z-index: 2;  
   }

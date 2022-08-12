@@ -1,7 +1,17 @@
 <app-header [user]="user"></app-header>
-<app-navegation></app-navegation>
-<app-about [usuario]="user" id="about"></app-about>
-<app-experiences [user]="user" id="experience"></app-experiences>
-<app-education [user]="user" id="education"></app-education>
-<app-skills id="skills"></app-skills>
-<app-works id="works" [user]="user"></app-works>
+<app-navegation (navegar)="moverse($event)"></app-navegation>
+<div #about>
+    <app-about [usuario]="user"></app-about>
+</div>
+<div #experience>
+    <app-experiences [user]="user" id="experience"></app-experiences>
+</div>
+<div #education>
+    <app-education [user]="user" id="education"></app-education>
+</div>
+<div #skills>
+    <app-skills id="skills"></app-skills>
+</div>
+<div #works>
+   <app-works id="works" [user]="user"></app-works> 
+</div>

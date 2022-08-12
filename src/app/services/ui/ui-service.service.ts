@@ -47,7 +47,7 @@ export class UiServiceService {
 
   subrayarScroll(elementos: QueryList<any>, animacion: string){
     elementos.forEach(item=>{
-      if(item.nativeElement.offsetTop - 300 < document.documentElement.scrollTop){
+      if(item.nativeElement.offsetTop - 400 < document.documentElement.scrollTop){
         item.nativeElement.style.animation = animacion
       }
     })

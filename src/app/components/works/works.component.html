@@ -1,5 +1,12 @@
 <div class="container">
-    <h2>Works <i (click)="open()" title="Agregar" class="icofont-plus" *ngIf="ruteEdit"></i></h2>
+    <div class="titulo">
+        <div>
+            <h2>Works <i (click)="open()" title="Agregar" class="icofont-plus" *ngIf="ruteEdit"></i></h2>
+            <hr #hr>
+            <hr #hr>
+        </div>
+    </div>
+    
     <app-form-proyecto *ngIf="crear" [user]="user" (apaga)="apaga()"></app-form-proyecto>
     <div class="works">
         <app-item-work *ngFor="let item of user?.proyectos" [proyecto]="item" [user]="user"></app-item-work>
