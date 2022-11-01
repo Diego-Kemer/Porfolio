@@ -140,9 +140,6 @@
 
 
 @media (max-width: 650px) {
-    .conteiner{
-        height: 60vh;
-    }
     .conteiner .contenedor{
         flex-direction: column;
         overflow: hidden;
