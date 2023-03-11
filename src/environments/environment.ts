@@ -15,7 +15,8 @@ export const environment = {
   },
   production: false,
   //api: 'http://localhost:8080'
-  api: 'https://porfolio-web-diego.herokuapp.com'
+  //api: 'https://porfolio-web-diego.herokuapp.com'
+  api: 'https://porfolio-web-se39.onrender.com'
 };
 
 /*
